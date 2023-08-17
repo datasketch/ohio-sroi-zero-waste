@@ -5,7 +5,108 @@
 
 @layer base {}
 
-@layer components {}
+@layer components {
+  /* TABS */
+  .TabsTrigger {
+    @apply relative py-3 px-6 rounded-tr-lg rounded-tl-lg;
+  }
+
+  .TabsTrigger:not([data-state="active"]) {
+    @apply !text-gray-2;
+  }
+
+  .TabsTrigger[data-state="active"] {
+    @apply bg-anti-flash-white after:content-[""] after:absolute after:w-20 after:h-[2px] after:bottom-0 after:left-1/2 after:-translate-x-1/2;
+    color: unset;
+  }
+
+  .TabsTrigger[data-state="active"]:after {
+    background-color: currentColor;
+  }
+
+  /* ACCORDION */
+  .AccordionContent {
+    overflow: hidden;
+  }
+  
+  .AccordionContent[data-state='open'] {
+     animation: slideDown 300ms ease-out;
+  }
+
+  .AccordionContent[data-state='closed'] {
+    animation: slideUp 300ms ease-out;
+  }
+
+  .AccordionChevron {
+    transition: transform 300ms;
+  }
+
+  .AccordionHeader {
+    @apply grid grid-cols-12 items-center py-1.5 px-5;
+    transition: background-color 300ms;
+  }
+
+  .AccordionItem:nth-child(2n) .AccordionHeader:not([data-state="open"]) {
+    @apply !bg-white hover:!bg-platinum/50;
+  }
+
+  .AccordionItem:nth-child(2n + 1) .AccordionHeader:not([data-state="open"]) {
+    @apply !bg-platinum/20 hover:!bg-platinum/50;
+  }
+
+  .AccordionHeader:not([data-state="open"]):last-child {
+    @apply !rounded-b-2xl;
+  }
+
+  .AccordionHeader[data-state="open"] {
+    @apply border-[0.5px] rounded-t-md !border-b-transparent;
+  }
+
+  .AccordionContent {
+    @apply px-5 bg-white;
+  }
+
+  .AccordionContent[data-state="open"] {
+    @apply rounded-b-md border-[0.5px] !border-t-transparent;
+  }
+
+  .AccordionContentChildren,
+  .AccordionContentFooter {
+    @apply col-span-12 grid grid-cols-12 border-t-[0.5px] py-4;
+  }
+
+  .AccordionTrigger:not([data-state='open']) {
+    @apply !bg-anti-flash-white-2;
+  }
+
+  .AccordionTrigger {
+    @apply rounded-md py-1.5 px-2;
+  }
+
+  
+  .AccordionTrigger[data-state='open'] > .AccordionChevron {
+    @apply !text-white;
+    transform: rotate(90deg);
+  }
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+}
 
 @layer utilities {
     .u-container {

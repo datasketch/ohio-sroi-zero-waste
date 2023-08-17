@@ -12,7 +12,11 @@ module.exports = {
 				'gray': '#757575',
 				'gray-2': '#767676',
 				'robin-egg-blue': '#00C1D4',
-				'silver': '#B4B4B4'
+				'silver': '#B4B4B4',
+				'platinum': '#D9D9D9',
+				'anti-flash-white': '#F0F0F0',
+				'silver-2': '#AEAEAE',
+				'anti-flash-white-2': '#EFEFEF',
 			},
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif'],

@@ -1,4 +1,5 @@
 ---
+import TabSection from "../components/TabSection";
 import BaseLayout from "../layout/BaseLayout.astro";
 ---
 
@@ -10,6 +11,7 @@ import BaseLayout from "../layout/BaseLayout.astro";
       alt="banner"
     />
   </div>
+  <!--  -->
   <div class="relative pb-24">
     <div class="-mt-32 u-container bg-white">
       <div class="py-12">
@@ -62,5 +64,9 @@ import BaseLayout from "../layout/BaseLayout.astro";
         </div>
       </div>
     </div>
+  </div>
+  <!--  -->
+  <div>
+    <TabSection client:idle />
   </div>
 </BaseLayout>
