@@ -1,7 +1,6 @@
 import * as Accordion from '@radix-ui/react-accordion';
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 import hexRgb from 'hex-rgb';
-import { useState } from 'react';
 
 export default function TableAccordion({ color = '#00694E', setIsOpen }) {
     const rgb = hexRgb(color, { format: 'array', alpha: 0.1 })

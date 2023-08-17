@@ -1,6 +1,8 @@
 ---
+import CardAmount from "../components/CardAmount";
 import TabSection from "../components/TabSection";
 import BaseLayout from "../layout/BaseLayout.astro";
+
 ---
 
 <BaseLayout title="Home Page" description="Esta es la página inicial">
@@ -43,22 +45,13 @@ import BaseLayout from "../layout/BaseLayout.astro";
         <div class="mt-20">
           <div class="flex gap-x-28 items-center">
             <div class="w-1/2">
-              <h2 class="text-2xl text-center">
-                For every <span class="text-robin-egg-blue font-semibold"
-                  >$1.00</span
-                >
-                <br />
-                Invested in BB2C Internships Generates
-              </h2>
-              <div class="mt-9 bg-robin-egg-blue/5 py-8 px-10 rounded-lg text-center">
-                <p>A social value</p>
-                <p class="text-robin-egg-blue text-5xl font-semibold mt-1">$ 13.66</p>
-                <div class="bg-silver h-[0.5px] mt-5"></div>
-                <p class="text-gray-2 text-center mt-3 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit 75.67 + 250.00 + 19.50 + 350 + 430 = 2,908,009.05</p>
-              </div>
+              <CardAmount client:load />
             </div>
             <div class="w-1/2">
-              <img src="/images/graphic-distribution.svg" alt="graphic distribution">
+              <img
+                src="/images/graphic-distribution.svg"
+                alt="graphic distribution"
+              />
             </div>
           </div>
         </div>
@@ -67,6 +60,6 @@ import BaseLayout from "../layout/BaseLayout.astro";
   </div>
   <!--  -->
   <div>
-    <TabSection client:idle />
+    <TabSection client:load />
   </div>
 </BaseLayout>

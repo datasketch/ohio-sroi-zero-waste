@@ -89,6 +89,16 @@
     transform: rotate(90deg);
   }
 
+  .DialogOverlay {
+    @apply fixed top-0 left-0 w-full h-full bg-black/60 cursor-pointer;
+    animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .DialogContent {
+    @apply bg-white w-full max-w-lg fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 py-8 px-10 rounded-lg;
+    animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
 @keyframes slideDown {
   from {
     height: 0;
@@ -99,13 +109,33 @@
 }
 
 @keyframes slideUp {
-  from {
-    height: var(--radix-accordion-content-height);
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
-  to {
-    height: 0;
+
+  @keyframes overlayShow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
-}
+  
+  @keyframes contentShow {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
 }
 
 @layer utilities {
