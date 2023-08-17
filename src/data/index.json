@@ -1,0 +1,150 @@
+{
+    "theme": "",
+    "logo": "",
+    "title": "",
+    "subtitle": "",
+    "description": "",
+    "statistics_section": {
+        "title": "",
+        "amount": "",
+        "cardAmount": {
+            "title": "",
+            "amount": "",
+            "information": "",
+            "formula": ""
+        },
+        "srcGraph": ""
+    },
+    "tabs": {
+        "dashboard": {
+            "label": "",
+            "title": "",
+            "tables": {
+                "economic_impact": {
+                    "title": "",
+                    "information": "",
+                    "rows": [
+                        {
+                            "stakeholders": "",
+                            "outcomes": "",
+                            "value": "",
+                            "item": {
+                                "stakeholders": "",
+                                "outcomes": [
+                                    "",
+                                    ""
+                                ],
+                                "value": [
+                                    "",
+                                    ""
+                                ]
+                            },
+                            "formula": ""
+                        }
+                    ],
+                    "formula": ""
+                },
+                "social_impact": {
+                    "title": "",
+                    "information": "",
+                    "rows": [
+                        {
+                            "stakeholders": "",
+                            "outcomes": "",
+                            "value": "",
+                            "item": {
+                                "stakeholders": "",
+                                "outcomes": [
+                                    "",
+                                    ""
+                                ],
+                                "value": [
+                                    "",
+                                    ""
+                                ]
+                            },
+                            "formula": ""
+                        }
+                    ],
+                    "formula": ""
+                },
+                "environmental_impact": {
+                    "title": "",
+                    "information": "",
+                    "rows": [
+                        {
+                            "stakeholders": "",
+                            "outcomes": "",
+                            "value": "",
+                            "item": {
+                                "stakeholders": "",
+                                "outcomes": [
+                                    "",
+                                    ""
+                                ],
+                                "value": [
+                                    "",
+                                    ""
+                                ]
+                            },
+                            "formula": ""
+                        }
+                    ],
+                    "formula": ""
+                },
+                "program_inputs": {
+                    "title": "",
+                    "rows": [
+                        {
+                            "description": "",
+                            "value": ""
+                        },
+                        {
+                            "description": "",
+                            "value": ""
+                        },
+                        {
+                            "description": "",
+                            "value": ""
+                        }
+                    ]
+                },
+                "program_outputs": {
+                    "title": "",
+                    "rows": [
+                        {
+                            "description": "",
+                            "value": ""
+                        },
+                        {
+                            "description": "",
+                            "value": ""
+                        },
+                        {
+                            "description": "",
+                            "value": ""
+                        }
+                    ]
+                }
+            }
+        },
+        "outcome_chain": {
+            "label": "",
+            "title": "",
+            "graphs": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "references": {
+            "label": "",
+            "title": "",
+            "list": [
+                "",
+                "",
+                ""
+            ]
+        }
+    }
+}
