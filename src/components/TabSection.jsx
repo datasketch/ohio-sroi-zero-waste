@@ -1,5 +1,7 @@
 import * as Tabs from '@radix-ui/react-tabs';
 import Table from './Table';
+import OutcomeChain from './OutcomeChain';
+import References from './References';
 
 
 export default function TabSection({ color = '#00694E' }) {
@@ -25,16 +27,16 @@ export default function TabSection({ color = '#00694E' }) {
                 </div>
             </Tabs.Content>
             <Tabs.Content className='bg-anti-flash-white' value="tab2">
-                <div className='pt-12 pb-9'>
+                <div className='pt-20 pb-36'>
                     <div className='u-container'>
-                        Tab Outcome Chain
+                        <OutcomeChain />
                     </div>
                 </div>
             </Tabs.Content>
-            <Tabs.Content className='bg-anti-flash-white' value="tab3">
+            <Tabs.Content className='bg-anti-flash-white h-screen' value="tab3">
                 <div className='pt-12 pb-9'>
                     <div className='u-container'>
-                        Tab References
+                        <References />
                     </div>
                 </div>
             </Tabs.Content>
