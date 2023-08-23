@@ -2,7 +2,8 @@
 import CardAmount from "../components/CardAmount";
 import TabSection from "../components/TabSection";
 import BaseLayout from "../layout/BaseLayout.astro";
-
+import data from "../data/index.json";
+console.log(data);
 ---
 
 <BaseLayout title="Home Page" description="Esta es la página inicial">
@@ -20,37 +21,37 @@ import BaseLayout from "../layout/BaseLayout.astro";
         <div class="mx-auto max-w-xl">
           <div class="flex items-center justify-between">
             <div class="flex-shrink-0">
-              <img
-                src="/images/logo-passion-works.svg"
-                alt="logo passion works"
-              />
+              <img src={data.logo} alt={data.title} />
             </div>
             <div class="text-center">
-              <h2 class="text-xl">Social Return on Investment:</h2>
+              <h2 class="text-xl">{data.subtitle}</h2>
               <h1 class="font-monserrat font-semibold text-3xl">
-                PASSION WORKS STUDIO
+                {data.title}
               </h1>
             </div>
           </div>
         </div>
         <div class="mx-auto max-w-[720px] text-center mt-10">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit vivamus,
-            magna cras ridiculus quisque rhoncus vehicula nec, facilisis
-            praesent ante mus posuere vitae magnis. A montes urna arcu mollis
-            duis luctus praesent rhoncus natoque bibendum.
+            {data.description}
           </p>
         </div>
         <div class="bg-gray h-[1px] max-w-[936px] mx-auto mt-12"></div>
         <div class="mt-20">
           <div class="flex gap-x-28 items-center">
             <div class="w-1/2">
-              <CardAmount client:load />
+              <CardAmount
+                title={data.statistics_section.title}
+                amount={data.statistics_section.amount}
+                cardAmount={data.statistics_section.cardAmount}
+                color={data.theme}
+                client:load
+              />
             </div>
             <div class="w-1/2">
               <img
-                src="/images/graphic-distribution.svg"
-                alt="graphic distribution"
+                src={data.statistics_section.srcGraph}
+                alt={data.statistics_section.title}
               />
             </div>
           </div>
@@ -60,6 +61,6 @@ import BaseLayout from "../layout/BaseLayout.astro";
   </div>
   <!--  -->
   <div>
-    <TabSection client:load />
+    <TabSection color={data.theme} tabs={data.tabs} client:load />
   </div>
 </BaseLayout>

@@ -1,128 +1,193 @@
 {
-    "theme": "",
-    "logo": "",
-    "title": "",
-    "subtitle": "",
-    "description": "",
+    "theme": "#00C1D4",
+    "logo": "/images/logo-1.svg",
+    "title": "PASSION WORKS STUDIO",
+    "subtitle": "Social Return on Investment:",
+    "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit vivamus, magna cras ridiculus quisque rhoncus vehicula nec, facilisis praesent ante mus posuere vitae magnis. A montes urna arcu mollis duis luctus praesent rhoncus natoque bibendum.",
     "statistics_section": {
-        "title": "",
-        "amount": "",
+        "title": "Invested in BB2C Internships Generates",
+        "amount": 1,
         "cardAmount": {
-            "title": "",
-            "amount": "",
-            "information": "",
-            "formula": ""
+            "title": "A social value",
+            "amount": 13.66,
+            "information": "This dollar amount reflects the ripple eects caused by experiential learning and service learning. After participating in experiential or service learning, students experience short term outcomes such as increased academic success and longer term impacts such as increased likelihood of being hired and earning higher wages. Communities benefit from increased sta capacity and increased resources. Impacts to the university from experiential learning or service learning include cultivating a reputation for student engagement that impacts potential new enrollment.",
+            "formula": "Lorem ipsum dolor sit amet, consectetur adipiscing elit 75.67 + 250.00 + 19.50 + 350 + 430 = 2,908,009.05 "
         },
-        "srcGraph": ""
+        "srcGraph": "/images/test-graph.svg"
     },
     "tabs": {
         "dashboard": {
-            "label": "",
-            "title": "",
+            "label": "Dashboard",
+            "title": "Dashboard",
             "tables": {
                 "economic_impact": {
-                    "title": "",
-                    "information": "",
+                    "title": "Economic impact",
+                    "information": "Lorem ipsum",
                     "rows": [
                         {
-                            "stakeholders": "",
-                            "outcomes": "",
-                            "value": "",
+                            "stakeholders": "Students",
+                            "outcomes": "Avoid pursuing a career path or college major they will not use and do not like",
+                            "value": 329346,
                             "item": {
-                                "stakeholders": "",
+                                "stakeholders": "Lorem",
                                 "outcomes": [
-                                    "",
-                                    ""
+                                    "lorem",
+                                    "lorem"
                                 ],
                                 "value": [
-                                    "",
-                                    ""
+                                    0,
+                                    0
                                 ]
                             },
-                            "formula": ""
+                            "formula": "0 + 0 = x"
                         }
                     ],
-                    "formula": ""
+                    "formula": "0 + 0 + 0 = x"
                 },
                 "social_impact": {
-                    "title": "",
-                    "information": "",
+                    "title": "Social impact",
+                    "information": "Lorem ipsum",
                     "rows": [
                         {
-                            "stakeholders": "",
-                            "outcomes": "",
-                            "value": "",
+                            "stakeholders": "All",
+                            "outcomes": "Increased social capital",
+                            "value": 129644,
                             "item": {
-                                "stakeholders": "",
+                                "stakeholders": "lorem",
                                 "outcomes": [
-                                    "",
-                                    ""
+                                    "lorem",
+                                    "lorem"
                                 ],
                                 "value": [
-                                    "",
-                                    ""
+                                    0,
+                                    0
                                 ]
                             },
-                            "formula": ""
+                            "formula": "0 + 0 = x"
+                        },
+                        {
+                            "stakeholders": "Students",
+                            "outcomes": "Increased personal development (a combination of personal, career, and community identity)",
+                            "value": 25010,
+                            "item": {
+                                "stakeholders": "Proxy",
+                                "outcomes": [
+                                    "Number of students reporting extreme growth of sense of personal development",
+                                    "Number of students reporting some growth of sense of personal development",
+                                    "Cost of a leadership summer camp (YMCA, 2022)"
+                                ],
+                                "value": [
+                                    30,
+                                    22,
+                                    610
+                                ]
+                            },
+                            "formula": "30 * 610.00 + 22 * 0.5 * 610.00 = 25,010.00"
+                        },
+                        {
+                            "stakeholders": "Students",
+                            "outcomes": "Defined career path for students, enabling them to take the next step",
+                            "value": 43370,
+                            "item": {
+                                "stakeholders": "lorem",
+                                "outcomes": [
+                                    "lorem",
+                                    "lorem"
+                                ],
+                                "value": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "formula": "0 + 0 = x"
+                        },
+                        {
+                            "stakeholders": "Students",
+                            "outcomes": "Increased soft skills",
+                            "value": 9953,
+                            "item": {
+                                "stakeholders": "lorem",
+                                "outcomes": [
+                                    "lorem",
+                                    "lorem"
+                                ],
+                                "value": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "formula": "0 + 0 = x"
+                        },
+                        {
+                            "stakeholders": "Students",
+                            "outcomes": "Increased soft skills",
+                            "value": 82434,
+                            "item": {
+                                "stakeholders": "lorem",
+                                "outcomes": [
+                                    "lorem",
+                                    "lorem"
+                                ],
+                                "value": [
+                                    0,
+                                    0
+                                ]
+                            },
+                            "formula": "0 + 0 = x"
                         }
                     ],
-                    "formula": ""
+                    "formula": "0 + 0 + 0 = x"
                 },
                 "environmental_impact": {
-                    "title": "",
-                    "information": "",
-                    "rows": [
-                        {
-                            "stakeholders": "",
-                            "outcomes": "",
-                            "value": "",
-                            "item": {
-                                "stakeholders": "",
-                                "outcomes": [
-                                    "",
-                                    ""
-                                ],
-                                "value": [
-                                    "",
-                                    ""
-                                ]
-                            },
-                            "formula": ""
-                        }
-                    ],
-                    "formula": ""
+                    "title": "Environmental Impact"
                 },
                 "program_inputs": {
-                    "title": "",
+                    "title": "Program Inputs",
                     "rows": [
                         {
-                            "description": "",
-                            "value": ""
+                            "description": "Lorem ipsum",
+                            "value": 75.76
                         },
                         {
-                            "description": "",
-                            "value": ""
+                            "description": "Lorem ipsum",
+                            "value": 250
                         },
                         {
-                            "description": "",
-                            "value": ""
+                            "description": "Lorem ipsum",
+                            "value": 19.50
+                        },
+                        {
+                            "description": "Lorem ipsum",
+                            "value": 350
+                        },
+                        {
+                            "description": "Lorem ipsum",
+                            "value": 430
                         }
                     ]
                 },
                 "program_outputs": {
-                    "title": "",
+                    "title": "Program Outputs",
                     "rows": [
                         {
-                            "description": "",
-                            "value": ""
+                            "description": "Lorem ipsum",
+                            "value": 75.76
                         },
                         {
-                            "description": "",
-                            "value": ""
+                            "description": "Lorem ipsum",
+                            "value": 250
                         },
                         {
-                            "description": "",
-                            "value": ""
+                            "description": "Lorem ipsum",
+                            "value": 19.50
+                        },
+                        {
+                            "description": "Lorem ipsum",
+                            "value": 350
+                        },
+                        {
+                            "description": "Lorem ipsum",
+                            "value": 430
                         }
                     ]
                 }

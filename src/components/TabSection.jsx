@@ -4,7 +4,7 @@ import OutcomeChain from './OutcomeChain';
 import References from './References';
 
 
-export default function TabSection({ color = '#00694E' }) {
+export default function TabSection({ color = '#00694E', tabs }) {
     return (
         // TAB PARENT
         <Tabs.Root defaultValue="tab1" orientation="vertical">
