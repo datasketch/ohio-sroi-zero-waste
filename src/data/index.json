@@ -13,14 +13,16 @@
             "information": "This dollar amount reflects the ripple eects caused by experiential learning and service learning. After participating in experiential or service learning, students experience short term outcomes such as increased academic success and longer term impacts such as increased likelihood of being hired and earning higher wages. Communities benefit from increased sta capacity and increased resources. Impacts to the university from experiential learning or service learning include cultivating a reputation for student engagement that impacts potential new enrollment.",
             "formula": "Lorem ipsum dolor sit amet, consectetur adipiscing elit 75.67 + 250.00 + 19.50 + 350 + 430 = 2,908,009.05 "
         },
-        "srcGraph": "/images/test-graph.svg"
+        "src_graph": "/images/test-graph.svg"
     },
-    "tabs": {
-        "dashboard": {
+    "tabs": [
+        {
+            "type": "table",
             "label": "Dashboard",
             "title": "Dashboard",
-            "tables": {
-                "economic_impact": {
+            "tables": [
+                {
+                    "type": "economic_impact",
                     "title": "Economic impact",
                     "information": "Lorem ipsum",
                     "rows": [
@@ -28,7 +30,7 @@
                             "stakeholders": "Students",
                             "outcomes": "Avoid pursuing a career path or college major they will not use and do not like",
                             "value": 329346,
-                            "item": {
+                            "rows": {
                                 "stakeholders": "Lorem",
                                 "outcomes": [
                                     "lorem",
@@ -44,7 +46,8 @@
                     ],
                     "formula": "0 + 0 + 0 = x"
                 },
-                "social_impact": {
+                {
+                    "type": "social_impact",
                     "title": "Social impact",
                     "information": "Lorem ipsum",
                     "rows": [
@@ -52,7 +55,7 @@
                             "stakeholders": "All",
                             "outcomes": "Increased social capital",
                             "value": 129644,
-                            "item": {
+                            "rows": {
                                 "stakeholders": "lorem",
                                 "outcomes": [
                                     "lorem",
@@ -69,7 +72,7 @@
                             "stakeholders": "Students",
                             "outcomes": "Increased personal development (a combination of personal, career, and community identity)",
                             "value": 25010,
-                            "item": {
+                            "rows": {
                                 "stakeholders": "Proxy",
                                 "outcomes": [
                                     "Number of students reporting extreme growth of sense of personal development",
@@ -88,7 +91,7 @@
                             "stakeholders": "Students",
                             "outcomes": "Defined career path for students, enabling them to take the next step",
                             "value": 43370,
-                            "item": {
+                            "rows": {
                                 "stakeholders": "lorem",
                                 "outcomes": [
                                     "lorem",
@@ -105,7 +108,7 @@
                             "stakeholders": "Students",
                             "outcomes": "Increased soft skills",
                             "value": 9953,
-                            "item": {
+                            "rows": {
                                 "stakeholders": "lorem",
                                 "outcomes": [
                                     "lorem",
@@ -122,7 +125,7 @@
                             "stakeholders": "Students",
                             "outcomes": "Increased soft skills",
                             "value": 82434,
-                            "item": {
+                            "rows": {
                                 "stakeholders": "lorem",
                                 "outcomes": [
                                     "lorem",
@@ -138,10 +141,12 @@
                     ],
                     "formula": "0 + 0 + 0 = x"
                 },
-                "environmental_impact": {
+                {
+                    "type": "environmental_impact",
                     "title": "Environmental Impact"
                 },
-                "program_inputs": {
+                {
+                    "type": "program_inputs",
                     "title": "Program Inputs",
                     "rows": [
                         {
@@ -166,7 +171,8 @@
                         }
                     ]
                 },
-                "program_outputs": {
+                {
+                    "type": "program_outputs",
                     "title": "Program Outputs",
                     "rows": [
                         {
@@ -191,19 +197,21 @@
                         }
                     ]
                 }
-            }
+            ]
         },
-        "outcome_chain": {
-            "label": "",
-            "title": "",
+        {
+            "type": "outcome_chain",
+            "label": "Outcome Chain",
+            "title": "Outcome Chains for Student Stakeholders",
             "graphs": [
                 "",
                 "",
                 ""
             ]
         },
-        "references": {
-            "label": "",
+        {
+            "type": "references",
+            "label": "References",
             "title": "",
             "list": [
                 "",
@@ -211,5 +219,5 @@
                 ""
             ]
         }
-    }
+    ]
 }

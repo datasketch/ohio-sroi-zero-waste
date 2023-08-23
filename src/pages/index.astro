@@ -3,7 +3,6 @@ import CardAmount from "../components/CardAmount";
 import TabSection from "../components/TabSection";
 import BaseLayout from "../layout/BaseLayout.astro";
 import data from "../data/index.json";
-console.log(data);
 ---
 
 <BaseLayout title="Home Page" description="Esta es la página inicial">
@@ -50,7 +49,7 @@ console.log(data);
             </div>
             <div class="w-1/2">
               <img
-                src={data.statistics_section.srcGraph}
+                src={data.statistics_section.src_graph}
                 alt={data.statistics_section.title}
               />
             </div>

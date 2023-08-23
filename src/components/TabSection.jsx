@@ -5,23 +5,70 @@ import References from './References';
 
 
 export default function TabSection({ color = '#00694E', tabs }) {
+    // console.log(tabs);
     return (
         // TAB PARENT
         <Tabs.Root defaultValue="tab1" orientation="vertical">
             {/* TABS CHILDREN */}
             <Tabs.List className='u-container' aria-label="tabs">
-                <Tabs.Trigger value="tab1" className="TabsTrigger" style={{ color }}>Dashboard</Tabs.Trigger>
-                <Tabs.Trigger value="tab2" className="TabsTrigger" style={{ color }}>Outcome Chain</Tabs.Trigger>
-                <Tabs.Trigger value="tab3" className="TabsTrigger" style={{ color }}>References</Tabs.Trigger>
+                {
+                    tabs.map(({ label }, i) => {
+                        return (
+                            <Tabs.Trigger key={`tab-trigger-${i + 1}`} value={`tab${i + 1}`} className="TabsTrigger" style={{ color }}>{label}</Tabs.Trigger>
+                        )
+                    })
+                }
             </Tabs.List>
             {/* TABS CONTENT */}
-            <Tabs.Content className='bg-anti-flash-white' value="tab1">
+            {
+                tabs.map((item, i) => {
+                    return (
+                        <Tabs.Content key={`tab-content-${i + 1}`} className='bg-anti-flash-white' value={`tab${i + 1}`}>
+                            {
+                                item.type === 'table' && (
+                                    <div className='pt-12 pb-9'>
+                                        <div className='u-container'>
+                                            <div className='space-y-12'>
+                                                {/* TABLES */}
+                                                {
+                                                    item.tables.map((table, i) => {
+                                                        return (
+                                                            <Table key={`table-${i + 1}`} color={color} data={table} />
+                                                        )
+                                                    })
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                            {
+                                item.type === 'outcome_chain' && (
+                                    <div className='pt-20 pb-36'>
+                                        <div className='u-container'>
+                                            <OutcomeChain />
+                                        </div>
+                                    </div>
+                                )
+                            }
+                            {
+                                item.type === 'references' && (
+                                    <div className='py-12 lg:py-16 xl:py-20'>
+                                        <div className='u-container'>
+                                            <References />
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </Tabs.Content>
+                    )
+                })
+            }
+            {/* <Tabs.Content className='bg-anti-flash-white' value="tab1">
                 <div className='pt-12 pb-9'>
                     <div className='u-container'>
                         <div className='space-y-12'>
-                            {/* TABLE */}
-                            <Table color={color} />
-                            <Table color={color} />
+                            <Table color={color} data={tabs[0].tables.economic_impact} />
                         </div>
                     </div>
                 </div>
@@ -39,7 +86,7 @@ export default function TabSection({ color = '#00694E', tabs }) {
                         <References />
                     </div>
                 </div>
-            </Tabs.Content>
+            </Tabs.Content> */}
         </Tabs.Root>
     )
 }
