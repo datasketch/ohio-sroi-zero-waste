@@ -32,9 +32,15 @@ export default function TabSection({ color = '#00694E', tabs }) {
                                                 {/* TABLES */}
                                                 {
                                                     item.tables.map((table, i) => {
-                                                        return (
-                                                            <Table key={`table-${i + 1}`} color={color} data={table} />
-                                                        )
+                                                        if (table.type === 'economic_impact' || table.type === 'social_impact' || table.type === 'environmental_impact') {
+                                                            return (
+                                                                <Table key={`table-${i + 1}`} color={color} data={table} isLarge />
+                                                            )
+                                                        } else {
+                                                            return (
+                                                                <Table key={`table-${i + 1}`} color={color} data={table} />
+                                                            )
+                                                        }
                                                     })
                                                 }
                                             </div>
@@ -46,7 +52,7 @@ export default function TabSection({ color = '#00694E', tabs }) {
                                 item.type === 'outcome_chain' && (
                                     <div className='pt-20 pb-36'>
                                         <div className='u-container'>
-                                            <OutcomeChain />
+                                            <OutcomeChain title={item.title} graphs={item.graphs} />
                                         </div>
                                     </div>
                                 )
@@ -64,29 +70,6 @@ export default function TabSection({ color = '#00694E', tabs }) {
                     )
                 })
             }
-            {/* <Tabs.Content className='bg-anti-flash-white' value="tab1">
-                <div className='pt-12 pb-9'>
-                    <div className='u-container'>
-                        <div className='space-y-12'>
-                            <Table color={color} data={tabs[0].tables.economic_impact} />
-                        </div>
-                    </div>
-                </div>
-            </Tabs.Content>
-            <Tabs.Content className='bg-anti-flash-white' value="tab2">
-                <div className='pt-20 pb-36'>
-                    <div className='u-container'>
-                        <OutcomeChain />
-                    </div>
-                </div>
-            </Tabs.Content>
-            <Tabs.Content className='bg-anti-flash-white h-screen' value="tab3">
-                <div className='pt-12 pb-9'>
-                    <div className='u-container'>
-                        <References />
-                    </div>
-                </div>
-            </Tabs.Content> */}
         </Tabs.Root>
     )
 }

@@ -1,5 +1,5 @@
 
-export default function References() {
+export default function References({ list }) {
   return (
     <div>
         <ul className="list-disc space-y-10">
