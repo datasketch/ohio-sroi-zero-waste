@@ -29,12 +29,12 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                                 </h4>
                             </div>
                             <div className="col-span-2 flex items-center gap-x-8">
-                                <div className='w-4/12'>
-                                    <h4 className='text-sm font-semibold text-black'>
+                                <div className='w-6/12'>
+                                    <h4 className='text-sm font-semibold text-black text-right'>
                                         ${item.value}
                                     </h4>
                                 </div>
-                                <div className='8/12'>
+                                <div className='6/12'>
                                     <Accordion.Trigger onClick={(e) => getDataState(e)} className="AccordionTrigger" style={{ backgroundColor: color }}>
                                         <ChevronRightIcon className="AccordionChevron" aria-hidden />
                                     </Accordion.Trigger>
@@ -49,7 +49,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                                     </p>
                                 </div>
                                 <div className="col-span-7">
-                                    <div className='space-y-2'>
+                                    <div className='space-y-4'>
                                         {item.rows?.outcomes.map((item, i) => {
                                             return (
                                                 <p key={`outcomes-${i + 1}`} className='text-black text-sm'>
@@ -60,10 +60,10 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                                     </div>
                                 </div>
                                 <div className="col-span-2">
-                                    <div className='space-y-2'>
+                                    <div className='space-y-4'>
                                         {item.rows?.value.map((v, i) => {
                                             return (
-                                                <p key={`value-${i + 1}`} className='text-sm font-semibold translate-x-9'>
+                                                <p key={`value-${i + 1}`} className='text-sm font-semibold -translate-x-20 text-right'>
                                                     {v}
                                                 </p>
                                             );
@@ -71,7 +71,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                                     </div>
                                 </div>
                             </div>
-                            <div className='AccordionContentFooter' style={{ borderColor: rgba }}>
+                            <div className='flex flex-row justify-between border-t-[0.5px] py-4 pr-20' style={{ borderColor: rgba }}>
                                 <div className="col-span-3">
                                     <p className='text-gray-2 text-sm'>
                                         Formula

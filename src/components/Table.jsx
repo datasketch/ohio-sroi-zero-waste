@@ -51,7 +51,7 @@ export default function Table({ color, data, isLarge }) {
                                     Outcomes
                                 </h4>
                             </div>
-                            <div className="col-span-2">
+                            <div className="col-span-2 pl-12">
                                 <h4 className='text-gray-2 text-sm'>
                                     Value
                                 </h4>
