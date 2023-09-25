@@ -16,7 +16,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
         <Accordion.Root type="single" collapsible>
             {
                 rows && rows.map((item, i) => (
-                    <Accordion.Item className='AccordionItem' value={`item-${i}`}>
+                    <Accordion.Item key={i} className='AccordionItem' value={`item-${i}`}>
                         <Accordion.Header className='AccordionHeader' style={{ color: rgb, backgroundColor: rgba, borderColor: color }}>
                             <div className="col-span-3">
                                 <h4 className='text-black'>
