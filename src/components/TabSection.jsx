@@ -68,7 +68,7 @@ export default function TabSection({ color = '#00694E', tabs }) {
                             }
                             {
                                 item.type === 'interative' && (
-                                    <Interactive data={item} />
+                                    <Interactive />
                                 )
                             }
                         </Tabs.Content>

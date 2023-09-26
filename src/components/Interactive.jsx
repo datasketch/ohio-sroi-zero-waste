@@ -4,7 +4,7 @@ const variables = [
     {
         'id': 'var01',
         'description': 'Number of artists employed',
-        'value': 30
+        'value': 24
     },
     {
         'id': 'var02',
@@ -100,6 +100,91 @@ const variables = [
         'id': 'var20',
         'description': 'LBS of fabric',
         'value': 1200
+    },
+    {
+        'id': 'var21',
+        'description': 'Increase in average reported FTE and PTE starting salary for graduates with service learning experience (Matthews et al., 2015)',
+        'value': 6500
+    },
+    {
+        'id': 'var22',
+        'description': 'Consumers are willing to pay up to 5% more for environmentally friendly products (Holbrook, 2019).',
+        'value': 0.05
+    },
+    {
+        'id': 'var23',
+        'description': 'Wellbeing valuation of sense of identity',
+        'value': 1500
+    },
+    {
+        'id': 'var24',
+        'description': 'Wellbeing valuation of independence/agency',
+        'value': 2500
+    },
+    {
+        'id': 'var25',
+        'description': 'Health benefits of having a sense of connection with others',
+        'value': 2000
+    },
+    {
+        'id': 'var26',
+        'description': '% time spent informally learning from peers',
+        'value': 0.15
+    },
+    {
+        'id': 'var27',
+        'description': 'FMV of creative teacher',
+        'value': 15000
+    },
+    {
+        'id': 'var28',
+        'description': 'Health benefits of having sense of purpose at work',
+        'value': 2500
+    },
+    {
+        'id': 'var29',
+        'description': 'Average cost of respite care per hour in Ohio (zip recruiter average Ohio)',
+        'value': 15.52
+    },
+    {
+        'id': 'var30',
+        'description': 'Discount for counterfactual (number of artist support person who said they would take artist to dayhab instead)',
+        'value': 0.1
+    },
+    {
+        'id': 'var31',
+        'description': 'Wellbeing valuation of increased community connection',
+        'value': 1600
+    },
+    {
+        'id': 'var32',
+        'description': 'Health impacts of less stress in caregiving /value of knowing loved one is safe',
+        'value': 2600
+    },
+    {
+        'id': 'var33',
+        'description': 'Population of Athens City',
+        'value': 24130
+    },
+    {
+        'id': 'var34',
+        'description': 'Value of placemaking (living in a place with art murals)',
+        'value': 100
+    },
+    {
+        'id': 'var35',
+        'description': 'Value of a volunteer hour',
+        'value': 29.17
+    },
+    {
+        'id': 'var36',
+        'description': 'Value of a micro-credential in cultural competence',
+        'value': 100
+    },
+    {
+        'id': 'var37',
+        'description': 'For every $1 spent in a local store, $0.58 will be re-invested in the local community',
+        'value': 0.58
     }
 ]
 
@@ -107,8 +192,108 @@ function proxy1(list) {
     return list[0] * list[1] * list[2]
 }
 
+function proxy1_string(list) {
+    return `${list[0]} * ${list[1]} * ${list[2]} = ${list[3]}`
+}
+
 function proxy2(l) {
     return l[0] * l[1] + l[2] * l[3] + l[4] * l[5]
+}
+
+function proxy2_string(l) {
+    return `${l[0]} * ${l[1]} + ${l[2]} * ${l[3]} + ${l[4]} * ${l[5]} = ${l[6]}`
+}
+
+function proxy3(l) {
+    return l[0] * l[1]
+}
+
+function proxy3_string(l) {
+    return `${l[0]} * ${l[1]} = ${l[2]}`
+}
+
+function proxy9(l) {
+    return (l[0] + l[1] + l[2]) * l[3] * l[4]
+}
+
+function proxy9_string(l) {
+    return `(${l[0]} + ${l[1]} + ${l[2]}) * ${l[3]} * ${l[4]} = ${l[5]}`
+}
+
+function proxy10(l) {
+    return (l[0] + l[1]) * l[2]
+}
+
+function proxy10_string(l) {
+    return `(${l[0]} + ${l[1]}) * ${l[2]} = ${l[3]}`
+}
+
+function proxy11(l) {
+    return (l[0] * l[1] * l[2]) - (l[0] * l[1] * l[2] * l[3])
+}
+
+function proxy11_string(l) {
+    return `(${l[0]} * ${l[1]} * ${l[2]}) - (${l[0]} * ${l[1]} * ${l[2]} * ${l[3]}) = ${l[4]}`
+}
+
+function proxy12(l) {
+    return 2 * l[0] * l[1]
+}
+
+function proxy12_string(l) {
+    return `2 * ${l[0]} * ${l[1]} = ${l[2]}`
+}
+
+function proxy18_string(a, b, c, d) {
+    return `${a} + ${b} + ${c} = ${d}`
+}
+
+function environmental(a, b, c) {
+    const out = [
+        "kg of aluminum printing plates reused ",
+        "Dollar Value of EC per 1000 kg of aluminum framing ($) (Greenspec, 2023)",
+        "Total embodied carbon cost savings of aluminum reused",
+        "kg of wood for flowers",
+        "Dollar Value of EC per 1000 kg of processed wood ($) (Greenspec, 2023)",
+        "Total embodied carbon cost savings of processed wood reused",
+        "Total Tons of reused/upcycled materials (pounds to tons converstion)",
+        "metric tons CO2 equivalent per ton of food waste (O'Brien, 2016, Table 6)",
+        "Social Cost of Carbon",
+        "Total carbon cost avoided of reused materials",
+        "Total environmental savings - emobdied energy and social cost of carbon averted"
+    ]
+    const values = []
+
+    values.push(a * 0.45)
+    values.push(14229)
+    values.push(values[0] * values[1] / 1000)
+    values.push(b * 0.45)
+    values.push(36.72)
+    values.push(values[3] * values[4] / 1000)
+    values.push((a + b + c) / 2000)
+    values.push(1.54)
+    values.push(151)
+    values.push(values[6] * values[7] * values[8])
+    values.push(values[2] + values[5] + values[9])
+
+    return {
+        out,
+        values
+    }
+}
+
+function totalTable(lista, total) {
+    let str = ""
+    let c = 1
+    for (let item of lista) {
+        str = str + `${item}`
+        if (c != lista.length) {
+            str = str + ` + `
+        }
+        c = c + 1
+    }
+    str = str + ` = ${total}`
+    return str
 }
 
 const tablesAPI = [
@@ -124,6 +309,7 @@ const tablesAPI = [
                 "outcomes2": "Total Value of ability to make a wage in a creative capacity",
                 "value": 0,
                 "funtion": proxy1,
+                "f_string": proxy1_string,
                 "var": ["var01", "var02", "var03"],
                 "rows": {
                     "stakeholders": "Proxy 1",
@@ -138,6 +324,7 @@ const tablesAPI = [
                 "outcomes2": "Total value for staff artists of Increased ability to be employed in a creative capacity",
                 "value": 0,
                 "funtion": proxy2,
+                "f_string": proxy2_string,
                 "var": ["var05", "var06", "var07", "var08", "var09", "var10"],
                 "rows": {
                     "stakeholders": "Proxy 2",
@@ -150,18 +337,22 @@ const tablesAPI = [
     }
 ]
 
-/* const tables = [
+const tablesReal = [
     {
         "type": "economic_impact",
         "title": "Economic impact",
         "information": "Lorem ipsum",
         "totalValue": "313.874,6",
+        "f_string": totalTable,
         "rows": [
             {
                 "stakeholders": "Core Artists",
                 "outcomes": "Ability to make a wage in a creative capacity",
                 "value": 45813.6,
-                "funcion": suma(),
+                "funtion": proxy1,
+                "f_string": proxy1_string,
+                "var": ["var01", "var02", "var03"],
+                "outcomes2": "Total Value of ability to make a wage in a creative capacity",
                 "rows": {
                     "stakeholders": "Proxy 1",
                     "outcomes": [
@@ -183,6 +374,10 @@ const tablesAPI = [
                 "stakeholders": "Staff Artists",
                 "outcomes": "Increased ability to be employed in a creative capacity",
                 "value": 221811,
+                "funtion": proxy2,
+                "f_string": proxy2_string,
+                "var": ["var05", "var06", "var07", "var08", "var09", "var10"],
+                "outcomes2": "Total Value of ability to make a wage in a creative capacity",
                 "rows": {
                     "stakeholders": "Proxy 2",
                     "outcomes": [
@@ -210,6 +405,10 @@ const tablesAPI = [
                 "stakeholders": "Ohio University Students",
                 "outcomes": "Increased experiential learning experience",
                 "value": 32500,
+                "funtion": proxy3,
+                "f_string": proxy3_string,
+                "var": ["var14", "var21"],
+                "outcomes2": "Value of increased experiential learning experience",
                 "rows": {
                     "stakeholders": "Proxy 3",
                     "outcomes": [
@@ -229,6 +428,10 @@ const tablesAPI = [
                 "stakeholders": "Customers",
                 "outcomes": "Ability to purchase goods to support a mission (consious consumption)",
                 "value": 13750,
+                "funtion": proxy3,
+                "f_string": proxy3_string,
+                "var": ["var16", "var22"],
+                "outcomes2": "Value of ability to purchase goods to support a mission (consious consumption)",
                 "rows": {
                     "stakeholders": "Proxy 4",
                     "outcomes": [
@@ -247,7 +450,7 @@ const tablesAPI = [
             {
                 "stakeholders": "Similar Organizations",
                 "outcomes": "Increased Sustainability",
-                "value": "",
+                "value": 0,
                 "rows": {
                     "stakeholders": "Proxy 5",
                     "outcomes": [
@@ -269,11 +472,16 @@ const tablesAPI = [
         "title": "Social impact",
         "information": "Lorem ipsum",
         "totalValue": "3.515.917,89",
+        "f_string": totalTable,
         "rows": [
             {
                 "stakeholders": "Core Artists",
                 "outcomes": "Artists build a sense of identity",
                 "value": 36000,
+                "funtion": proxy3,
+                "f_string": proxy3_string,
+                "var": ["var01", "var23"],
+                "outcomes2": "Total value of building a sense of identity",
                 "rows": {
                     "stakeholders": "Proxy 6",
                     "outcomes": [
@@ -287,12 +495,17 @@ const tablesAPI = [
                         36000
                     ]
                 },
-                "formula": "24 * 1500 = 36000"
+                "formula"
+                    : "24 * 1500 = 36000"
             },
             {
                 "stakeholders": "Core Artists",
                 "outcomes": "Increased maturity and self-reliance",
                 "value": 60000,
+                "funtion": proxy3,
+                "f_string": proxy3_string,
+                "var": ["var01", "var24"],
+                "outcomes2": "Total value of increased maturity and self-reliance",
                 "rows": {
                     "stakeholders": "Proxy 7",
                     "outcomes": [
@@ -312,6 +525,10 @@ const tablesAPI = [
                 "stakeholders": "Core Artists",
                 "outcomes": "Elevated well-being",
                 "value": 48000,
+                "funtion": proxy3,
+                "f_string": proxy3_string,
+                "var": ["var01", "var25"],
+                "outcomes2": "Total value of elevated well-being",
                 "rows": {
                     "stakeholders": "Proxy 8",
                     "outcomes": [
@@ -331,6 +548,10 @@ const tablesAPI = [
                 "stakeholders": "Core Artists",
                 "outcomes": "Increased reciprocal learning - reciprocal mentoring (skill building/proficiency)",
                 "value": 72000,
+                "funtion": proxy9,
+                "f_string": proxy9_string,
+                "var": ["var01", "var05", "var07", "var26", "var27"],
+                "outcomes2": "Value of increased reciprocal learning",
                 "rows": {
                     "stakeholders": "Proxy 9",
                     "outcomes": [
@@ -356,6 +577,10 @@ const tablesAPI = [
                 "stakeholders": "Staff Artists",
                 "outcomes": "Increased sense of purpose",
                 "value": 20000,
+                "funtion": proxy10,
+                "f_string": proxy10_string,
+                "var": ["var05", "var07", "var28"],
+                "outcomes2": "Value of increased sense of purpose",
                 "rows": {
                     "stakeholders": "Proxy 10",
                     "outcomes": [
@@ -377,6 +602,10 @@ const tablesAPI = [
                 "stakeholders": "Artist Support People",
                 "outcomes": "Increased help with caretaking",
                 "value": 63358.85,
+                "funtion": proxy11,
+                "f_string": proxy11_string,
+                "var": ["var01", "var02", "var29", "var30"],
+                "outcomes2": "Total value of increased help with caretaking",
                 "rows": {
                     "stakeholders": "Proxy 11",
                     "outcomes": [
@@ -400,6 +629,10 @@ const tablesAPI = [
                 "stakeholders": "Artist Support People",
                 "outcomes": "Increased sense of community and community inclusion",
                 "value": 76800,
+                "funtion": proxy12,
+                "f_string": proxy12_string,
+                "var": ["var01", "var31"],
+                "outcomes2": "Total value of increased sense of community inclusion",
                 "rows": {
                     "stakeholders": "Proxy 12",
                     "outcomes": [
@@ -419,6 +652,10 @@ const tablesAPI = [
                 "stakeholders": "Artist Support People",
                 "outcomes": "Stress reduction",
                 "value": 124800,
+                "funtion": proxy12,
+                "f_string": proxy12_string,
+                "var": ["var01", "var32"],
+                "outcomes2": "Total value of stress reduction",
                 "rows": {
                     "stakeholders": "Proxy 13",
                     "outcomes": [
@@ -438,6 +675,10 @@ const tablesAPI = [
                 "stakeholders": "Community Members",
                 "outcomes": "Improved community pride and identity",
                 "value": 2413000,
+                "funtion": proxy3,
+                "f_string": proxy3_string,
+                "var": ["var33", "var34"],
+                "outcomes2": "Value of Improved community pride and identity",
                 "rows": {
                     "stakeholders": "Proxy 14",
                     "outcomes": [
@@ -457,12 +698,16 @@ const tablesAPI = [
                 "stakeholders": "Community Members",
                 "outcomes": "A place where people network and connect",
                 "value": 224959.04,
+                "funtion": proxy3,
+                "f_string": proxy3_string,
+                "var": ["var13", "var35"],
+                "outcomes2": "Value of a place where people network and connect",
                 "rows": {
                     "stakeholders": "Proxy 15",
                     "outcomes": [
                         "Hours of volunteering from all PassionWorks volunteers",
                         "Value of a volunteer hour",
-                        "8Value of a place where people network and connect"
+                        "Value of a place where people network and connect"
                     ],
                     "value": [
                         7712,
@@ -476,6 +721,10 @@ const tablesAPI = [
                 "stakeholders": "Ohio University Students",
                 "outcomes": "Development of cultural competence",
                 "value": 377000,
+                "funtion": proxy3,
+                "f_string": proxy3_string,
+                "var": ["var15", "var36"],
+                "outcomes2": "Value of development of cultural competence",
                 "rows": {
                     "stakeholders": "Proxy 16",
                     "outcomes": [
@@ -495,6 +744,10 @@ const tablesAPI = [
                 "stakeholders": "Government",
                 "outcomes": "Increased local money flows",
                 "value": 159500,
+                "funtion": proxy3,
+                "f_string": proxy3_string,
+                "var": ["var16", "var37"],
+                "outcomes2": "Value of increased money flows",
                 "rows": {
                     "stakeholders": "Proxy 17",
                     "outcomes": [
@@ -518,11 +771,16 @@ const tablesAPI = [
         "title": "Environmental Impact",
         "information": "Lorem ipsum",
         "totalValue": "10.689.95",
+        "f_string": totalTable,
         "rows": [
             {
                 "stakeholders": "Suppliers/Vendors",
                 "outcomes": "Increased ability to upcycle their own discard materials",
                 "value": 10689.95,
+                "funtion": environmental,
+                "f_string": proxy18_string,
+                "var": ["var18", "var19", "var20"],
+                "outcomes2": "Total environmental savings - emobdied energy and social cost of carbon averted",
                 "rows": {
                     "stakeholders": "Proxy 18",
                     "outcomes": [
@@ -557,17 +815,17 @@ const tablesAPI = [
         ],
         "formula": "430.20 + 10244.88 + 14.87 = 10689.95"
     }
-] */
+]
 
-export default function Interactive({ data }) {
+export default function Interactive() {
     const color = '#00694E'
     const isGeneric = true
     const [outputs, setOutputs] = useState(variables)
-    const [tables, setTables] = useState(tablesAPI)
+    const [tables, setTables] = useState(tablesReal)
 
     const updateFieldChanged = index => e => {
         let newArr = [...outputs]
-        newArr[index].value = parseInt(e.target.value)
+        newArr[index].value = parseFloat(e.target.value)
 
         setOutputs(newArr);
         updateTable()
@@ -582,29 +840,49 @@ export default function Interactive({ data }) {
         for (let t of newTable) {
             let total = 0
             for (let r of t.rows) {
-                r.rows.outcomes = []
-                r.rows.value = []
-                r.var.forEach(item => {
-                    const found = variables.find(ele => ele.id === item)
-                    r.rows.outcomes.push(found.description)
-                    r.rows.value.push(found.value)
-                })
-                const total_row = r.funtion(r.rows.value)
-                r.rows.outcomes.push(r.outcomes2)
-                r.rows.value.push(total_row)
-                r.total = total_row
-                total = total + total_row
+                if (t.type == "environmental_impact") {
+                    const temp = []
+                    r.var.forEach(item => {
+                        const found = outputs.find(ele => ele.id === item)
+                        temp.push(found.value)
+                    })
+                    const result = r.funtion(temp[0], temp[1], temp[2])
+                    r.rows.outcomes = result.out
+                    r.rows.value = result.values
+                    r.value = result.values[10]
+                    r.formula = r.f_string(r.rows.value[2], r.rows.value[5], r.rows.value[9], r.rows.value[10])
+                    total = total + r.value
+                } else {
+                    r.rows.outcomes = []
+                    r.rows.value = []
+                    if (r.var) {
+                        r.var.forEach(item => {
+                            const found = outputs.find(ele => ele.id === item)
+                            r.rows.outcomes.push(found.description)
+                            r.rows.value.push(found.value)
+                        })
+                        const total_row = r.funtion(r.rows.value)
+                        r.rows.outcomes.push(r.outcomes2)
+                        r.rows.value.push(total_row)
+                        r.value = total_row
+                        r.formula = r.f_string(r.rows.value)
+                        total = total + total_row
+                    }
+                }
+
             }
+            const listaTotales = t.rows.map(ele => ele.value)
             t.totalValue = total
+            t.formula = t.f_string(listaTotales, t.totalValue)
         }
         setTables(tables)
     }
-    console.log(outputs);
+
     console.log(tables);
     return (
         <div className='pt-12 pb-9'>
             <div className='u-container'>
-                <div className='rounded-2xl overflow-hidden'>
+                <div className='rounded-2xl overflow-hidden mb-20'>
                     <div className='pt-5 pb-2.5 pl-5 pr-8' style={{
                         backgroundColor: isGeneric ? '#fff' : color
                     }}>
@@ -626,7 +904,7 @@ export default function Interactive({ data }) {
                         </div>
                     </div>
                     {
-                        outputs.map((item, i) => (
+                        outputs.slice(0, 20).map((item, i) => (
                             <div key={i} className='grid grid-cols-12 py-1 px-5 bg-white '>
                                 <div className="col-span-10">
                                     <h4 className='text-black'>
@@ -644,7 +922,7 @@ export default function Interactive({ data }) {
                 <div className='space-y-12'>
                     {/* TABLES */}
                     {
-                        data.tables.map((table, i) => {
+                        tables.map((table, i) => {
                             if (table.type === 'economic_impact' || table.type === 'social_impact' || table.type === 'environmental_impact') {
                                 return (
                                     <Table key={`table-${i + 1}`} color={color} data={table} isLarge />

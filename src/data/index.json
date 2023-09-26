@@ -450,8 +450,8 @@
         },
         {
             "type": "interative",
-            "label": "Interative",
-            "title": "Interative",
+            "label": "Interactive",
+            "title": "Interactive",
             "tables": [
                 {
                     "type": "economic_impact",
