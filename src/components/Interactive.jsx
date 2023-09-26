@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Table from './Table';
 const variables = [
     {
@@ -103,11 +103,54 @@ const variables = [
     }
 ]
 
-function suma(a, b) {
-    return a + b
+function proxy1(list) {
+    return list[0] * list[1] * list[2]
 }
 
-const tables = [
+function proxy2(l) {
+    return l[0] * l[1] + l[2] * l[3] + l[4] * l[5]
+}
+
+const tablesAPI = [
+    {
+        "type": "economic_impact",
+        "title": "Economic impact",
+        "information": "Lorem ipsum",
+        "totalValue": 0,
+        "rows": [
+            {
+                "stakeholders": "Core Artists",
+                "outcomes": "Ability to make a wage in a creative capacity",
+                "outcomes2": "Total Value of ability to make a wage in a creative capacity",
+                "value": 0,
+                "funtion": proxy1,
+                "var": ["var01", "var02", "var03"],
+                "rows": {
+                    "stakeholders": "Proxy 1",
+                    "outcomes": [],
+                    "value": []
+                },
+                "formula": "24 * 189 * 10.1 = 45813.6"
+            },
+            {
+                "stakeholders": "Staff Artists",
+                "outcomes": "Increased ability to be employed in a creative capacity",
+                "outcomes2": "Total value for staff artists of Increased ability to be employed in a creative capacity",
+                "value": 0,
+                "funtion": proxy2,
+                "var": ["var05", "var06", "var07", "var08", "var09", "var10"],
+                "rows": {
+                    "stakeholders": "Proxy 2",
+                    "outcomes": [],
+                    "value": []
+                },
+                "formula": "6 * 32409 + 2 * 11172 + 3 * 1671 = 221811"
+            }],
+        "formula": "45813.6 + 221811 + 32500 + 13750 = 313874.6"
+    }
+]
+
+/* const tables = [
     {
         "type": "economic_impact",
         "title": "Economic impact",
@@ -514,21 +557,50 @@ const tables = [
         ],
         "formula": "430.20 + 10244.88 + 14.87 = 10689.95"
     }
-]
+] */
 
 export default function Interactive({ data }) {
     const color = '#00694E'
     const isGeneric = true
     const [outputs, setOutputs] = useState(variables)
+    const [tables, setTables] = useState(tablesAPI)
 
     const updateFieldChanged = index => e => {
-        console.log('index: ' + index)
         let newArr = [...outputs]
-        newArr[index].value = e.target.value
+        newArr[index].value = parseInt(e.target.value)
 
         setOutputs(newArr);
+        updateTable()
+    }
+
+    /* useEffect(() => {
+        updateTable()
+    }, []) */
+
+    const updateTable = () => {
+        let newTable = [...tables]
+        for (let t of newTable) {
+            let total = 0
+            for (let r of t.rows) {
+                r.rows.outcomes = []
+                r.rows.value = []
+                r.var.forEach(item => {
+                    const found = variables.find(ele => ele.id === item)
+                    r.rows.outcomes.push(found.description)
+                    r.rows.value.push(found.value)
+                })
+                const total_row = r.funtion(r.rows.value)
+                r.rows.outcomes.push(r.outcomes2)
+                r.rows.value.push(total_row)
+                r.total = total_row
+                total = total + total_row
+            }
+            t.totalValue = total
+        }
+        setTables(tables)
     }
     console.log(outputs);
+    console.log(tables);
     return (
         <div className='pt-12 pb-9'>
             <div className='u-container'>
