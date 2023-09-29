@@ -1,11 +1,11 @@
 import * as Tabs from '@radix-ui/react-tabs';
 import Table from './Table';
+import Interactive from './Interactive'
 import OutcomeChain from './OutcomeChain';
 import References from './References';
 
 
 export default function TabSection({ color = '#00694E', tabs }) {
-    // console.log(tabs);
     return (
         // TAB PARENT
         <Tabs.Root defaultValue="tab1" orientation="vertical">
@@ -64,6 +64,11 @@ export default function TabSection({ color = '#00694E', tabs }) {
                                             <References />
                                         </div>
                                     </div>
+                                )
+                            }
+                            {
+                                item.type === 'interative' && (
+                                    <Interactive />
                                 )
                             }
                         </Tabs.Content>
