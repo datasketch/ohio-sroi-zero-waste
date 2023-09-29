@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Table from './Table';
+import {proxy1, proxy1_formula, proxy2, proxy2_formula, proxy3, proxy3_formula, proxy9, proxy9_formula, proxy10, proxy10_formula, proxy11, proxy11_formula, proxy12, proxy12_formula, proxy18_formula, environmental, totalTable} from '../utils/functions'
+
 const variables = [
     {
         'id': 'var01',
@@ -188,169 +190,20 @@ const variables = [
     }
 ]
 
-function proxy1(list) {
-    return list[0] * list[1] * list[2]
-}
-
-function proxy1_string(list) {
-    return `${list[0]} * ${list[1]} * ${list[2]} = ${list[3]}`
-}
-
-function proxy2(l) {
-    return l[0] * l[1] + l[2] * l[3] + l[4] * l[5]
-}
-
-function proxy2_string(l) {
-    return `${l[0]} * ${l[1]} + ${l[2]} * ${l[3]} + ${l[4]} * ${l[5]} = ${l[6]}`
-}
-
-function proxy3(l) {
-    return l[0] * l[1]
-}
-
-function proxy3_string(l) {
-    return `${l[0]} * ${l[1]} = ${l[2]}`
-}
-
-function proxy9(l) {
-    return (l[0] + l[1] + l[2]) * l[3] * l[4]
-}
-
-function proxy9_string(l) {
-    return `(${l[0]} + ${l[1]} + ${l[2]}) * ${l[3]} * ${l[4]} = ${l[5]}`
-}
-
-function proxy10(l) {
-    return (l[0] + l[1]) * l[2]
-}
-
-function proxy10_string(l) {
-    return `(${l[0]} + ${l[1]}) * ${l[2]} = ${l[3]}`
-}
-
-function proxy11(l) {
-    return (l[0] * l[1] * l[2]) - (l[0] * l[1] * l[2] * l[3])
-}
-
-function proxy11_string(l) {
-    return `(${l[0]} * ${l[1]} * ${l[2]}) - (${l[0]} * ${l[1]} * ${l[2]} * ${l[3]}) = ${l[4]}`
-}
-
-function proxy12(l) {
-    return 2 * l[0] * l[1]
-}
-
-function proxy12_string(l) {
-    return `2 * ${l[0]} * ${l[1]} = ${l[2]}`
-}
-
-function proxy18_string(a, b, c, d) {
-    return `${a} + ${b} + ${c} = ${d}`
-}
-
-function environmental(a, b, c) {
-    const out = [
-        "kg of aluminum printing plates reused ",
-        "Dollar Value of EC per 1000 kg of aluminum framing ($) (Greenspec, 2023)",
-        "Total embodied carbon cost savings of aluminum reused",
-        "kg of wood for flowers",
-        "Dollar Value of EC per 1000 kg of processed wood ($) (Greenspec, 2023)",
-        "Total embodied carbon cost savings of processed wood reused",
-        "Total Tons of reused/upcycled materials (pounds to tons converstion)",
-        "metric tons CO2 equivalent per ton of food waste (O'Brien, 2016, Table 6)",
-        "Social Cost of Carbon",
-        "Total carbon cost avoided of reused materials",
-        "Total environmental savings - emobdied energy and social cost of carbon averted"
-    ]
-    const values = []
-
-    values.push(a * 0.45)
-    values.push(14229)
-    values.push(values[0] * values[1] / 1000)
-    values.push(b * 0.45)
-    values.push(36.72)
-    values.push(values[3] * values[4] / 1000)
-    values.push((a + b + c) / 2000)
-    values.push(1.54)
-    values.push(151)
-    values.push(values[6] * values[7] * values[8])
-    values.push(values[2] + values[5] + values[9])
-
-    return {
-        out,
-        values
-    }
-}
-
-function totalTable(lista, total) {
-    let str = ""
-    let c = 1
-    for (let item of lista) {
-        str = str + `${item}`
-        if (c != lista.length) {
-            str = str + ` + `
-        }
-        c = c + 1
-    }
-    str = str + ` = ${total}`
-    return str
-}
-
-const tablesAPI = [
-    {
-        "type": "economic_impact",
-        "title": "Economic impact",
-        "information": "Lorem ipsum",
-        "totalValue": 0,
-        "rows": [
-            {
-                "stakeholders": "Core Artists",
-                "outcomes": "Ability to make a wage in a creative capacity",
-                "outcomes2": "Total Value of ability to make a wage in a creative capacity",
-                "value": 0,
-                "funtion": proxy1,
-                "f_string": proxy1_string,
-                "var": ["var01", "var02", "var03"],
-                "rows": {
-                    "stakeholders": "Proxy 1",
-                    "outcomes": [],
-                    "value": []
-                },
-                "formula": "24 * 189 * 10.1 = 45813.6"
-            },
-            {
-                "stakeholders": "Staff Artists",
-                "outcomes": "Increased ability to be employed in a creative capacity",
-                "outcomes2": "Total value for staff artists of Increased ability to be employed in a creative capacity",
-                "value": 0,
-                "funtion": proxy2,
-                "f_string": proxy2_string,
-                "var": ["var05", "var06", "var07", "var08", "var09", "var10"],
-                "rows": {
-                    "stakeholders": "Proxy 2",
-                    "outcomes": [],
-                    "value": []
-                },
-                "formula": "6 * 32409 + 2 * 11172 + 3 * 1671 = 221811"
-            }],
-        "formula": "45813.6 + 221811 + 32500 + 13750 = 313874.6"
-    }
-]
-
 const tablesReal = [
     {
         "type": "economic_impact",
         "title": "Economic impact",
         "information": "Lorem ipsum",
         "totalValue": "313.874,6",
-        "f_string": totalTable,
+        "f_formula": totalTable,
         "rows": [
             {
                 "stakeholders": "Core Artists",
                 "outcomes": "Ability to make a wage in a creative capacity",
                 "value": 45813.6,
                 "funtion": proxy1,
-                "f_string": proxy1_string,
+                "f_formula": proxy1_formula,
                 "var": ["var01", "var02", "var03"],
                 "outcomes2": "Total Value of ability to make a wage in a creative capacity",
                 "rows": {
@@ -375,7 +228,7 @@ const tablesReal = [
                 "outcomes": "Increased ability to be employed in a creative capacity",
                 "value": 221811,
                 "funtion": proxy2,
-                "f_string": proxy2_string,
+                "f_formula": proxy2_formula,
                 "var": ["var05", "var06", "var07", "var08", "var09", "var10"],
                 "outcomes2": "Total Value of ability to make a wage in a creative capacity",
                 "rows": {
@@ -406,7 +259,7 @@ const tablesReal = [
                 "outcomes": "Increased experiential learning experience",
                 "value": 32500,
                 "funtion": proxy3,
-                "f_string": proxy3_string,
+                "f_formula": proxy3_formula,
                 "var": ["var14", "var21"],
                 "outcomes2": "Value of increased experiential learning experience",
                 "rows": {
@@ -429,7 +282,7 @@ const tablesReal = [
                 "outcomes": "Ability to purchase goods to support a mission (consious consumption)",
                 "value": 13750,
                 "funtion": proxy3,
-                "f_string": proxy3_string,
+                "f_formula": proxy3_formula,
                 "var": ["var16", "var22"],
                 "outcomes2": "Value of ability to purchase goods to support a mission (consious consumption)",
                 "rows": {
@@ -472,14 +325,14 @@ const tablesReal = [
         "title": "Social impact",
         "information": "Lorem ipsum",
         "totalValue": "3.515.917,89",
-        "f_string": totalTable,
+        "f_formula": totalTable,
         "rows": [
             {
                 "stakeholders": "Core Artists",
                 "outcomes": "Artists build a sense of identity",
                 "value": 36000,
                 "funtion": proxy3,
-                "f_string": proxy3_string,
+                "f_formula": proxy3_formula,
                 "var": ["var01", "var23"],
                 "outcomes2": "Total value of building a sense of identity",
                 "rows": {
@@ -503,7 +356,7 @@ const tablesReal = [
                 "outcomes": "Increased maturity and self-reliance",
                 "value": 60000,
                 "funtion": proxy3,
-                "f_string": proxy3_string,
+                "f_formula": proxy3_formula,
                 "var": ["var01", "var24"],
                 "outcomes2": "Total value of increased maturity and self-reliance",
                 "rows": {
@@ -526,7 +379,7 @@ const tablesReal = [
                 "outcomes": "Elevated well-being",
                 "value": 48000,
                 "funtion": proxy3,
-                "f_string": proxy3_string,
+                "f_formula": proxy3_formula,
                 "var": ["var01", "var25"],
                 "outcomes2": "Total value of elevated well-being",
                 "rows": {
@@ -549,7 +402,7 @@ const tablesReal = [
                 "outcomes": "Increased reciprocal learning - reciprocal mentoring (skill building/proficiency)",
                 "value": 72000,
                 "funtion": proxy9,
-                "f_string": proxy9_string,
+                "f_formula": proxy9_formula,
                 "var": ["var01", "var05", "var07", "var26", "var27"],
                 "outcomes2": "Value of increased reciprocal learning",
                 "rows": {
@@ -578,7 +431,7 @@ const tablesReal = [
                 "outcomes": "Increased sense of purpose",
                 "value": 20000,
                 "funtion": proxy10,
-                "f_string": proxy10_string,
+                "f_formula": proxy10_formula,
                 "var": ["var05", "var07", "var28"],
                 "outcomes2": "Value of increased sense of purpose",
                 "rows": {
@@ -603,7 +456,7 @@ const tablesReal = [
                 "outcomes": "Increased help with caretaking",
                 "value": 63358.85,
                 "funtion": proxy11,
-                "f_string": proxy11_string,
+                "f_formula": proxy11_formula,
                 "var": ["var01", "var02", "var29", "var30"],
                 "outcomes2": "Total value of increased help with caretaking",
                 "rows": {
@@ -630,7 +483,7 @@ const tablesReal = [
                 "outcomes": "Increased sense of community and community inclusion",
                 "value": 76800,
                 "funtion": proxy12,
-                "f_string": proxy12_string,
+                "f_formula": proxy12_formula,
                 "var": ["var01", "var31"],
                 "outcomes2": "Total value of increased sense of community inclusion",
                 "rows": {
@@ -653,7 +506,7 @@ const tablesReal = [
                 "outcomes": "Stress reduction",
                 "value": 124800,
                 "funtion": proxy12,
-                "f_string": proxy12_string,
+                "f_formula": proxy12_formula,
                 "var": ["var01", "var32"],
                 "outcomes2": "Total value of stress reduction",
                 "rows": {
@@ -676,7 +529,7 @@ const tablesReal = [
                 "outcomes": "Improved community pride and identity",
                 "value": 2413000,
                 "funtion": proxy3,
-                "f_string": proxy3_string,
+                "f_formula": proxy3_formula,
                 "var": ["var33", "var34"],
                 "outcomes2": "Value of Improved community pride and identity",
                 "rows": {
@@ -699,7 +552,7 @@ const tablesReal = [
                 "outcomes": "A place where people network and connect",
                 "value": 224959.04,
                 "funtion": proxy3,
-                "f_string": proxy3_string,
+                "f_formula": proxy3_formula,
                 "var": ["var13", "var35"],
                 "outcomes2": "Value of a place where people network and connect",
                 "rows": {
@@ -722,7 +575,7 @@ const tablesReal = [
                 "outcomes": "Development of cultural competence",
                 "value": 377000,
                 "funtion": proxy3,
-                "f_string": proxy3_string,
+                "f_formula": proxy3_formula,
                 "var": ["var15", "var36"],
                 "outcomes2": "Value of development of cultural competence",
                 "rows": {
@@ -745,7 +598,7 @@ const tablesReal = [
                 "outcomes": "Increased local money flows",
                 "value": 159500,
                 "funtion": proxy3,
-                "f_string": proxy3_string,
+                "f_formula": proxy3_formula,
                 "var": ["var16", "var37"],
                 "outcomes2": "Value of increased money flows",
                 "rows": {
@@ -771,14 +624,14 @@ const tablesReal = [
         "title": "Environmental Impact",
         "information": "Lorem ipsum",
         "totalValue": "10.689.95",
-        "f_string": totalTable,
+        "f_formula": totalTable,
         "rows": [
             {
                 "stakeholders": "Suppliers/Vendors",
                 "outcomes": "Increased ability to upcycle their own discard materials",
                 "value": 10689.95,
                 "funtion": environmental,
-                "f_string": proxy18_string,
+                "f_formula": proxy18_formula,
                 "var": ["var18", "var19", "var20"],
                 "outcomes2": "Total environmental savings - emobdied energy and social cost of carbon averted",
                 "rows": {
@@ -825,15 +678,11 @@ export default function Interactive() {
 
     const updateFieldChanged = index => e => {
         let newArr = [...outputs]
-        newArr[index].value = parseFloat(e.target.value)
+        newArr[index].value = e.target.value === '' ? 0 : parseFloat(e.target.value)
 
         setOutputs(newArr);
         updateTable()
     }
-
-    /* useEffect(() => {
-        updateTable()
-    }, []) */
 
     const updateTable = () => {
         let newTable = [...tables]
@@ -841,16 +690,15 @@ export default function Interactive() {
             let total = 0
             for (let r of t.rows) {
                 if (t.type == "environmental_impact") {
-                    const temp = []
-                    r.var.forEach(item => {
+                    const temp = r.var.reduce((result, item) => {
                         const found = outputs.find(ele => ele.id === item)
-                        temp.push(found.value)
-                    })
+                        return [...result, found.value]
+                    }, [])
                     const result = r.funtion(temp[0], temp[1], temp[2])
                     r.rows.outcomes = result.out
                     r.rows.value = result.values
                     r.value = result.values[10]
-                    r.formula = r.f_string(r.rows.value[2], r.rows.value[5], r.rows.value[9], r.rows.value[10])
+                    r.formula = r.f_formula(r.rows.value[2], r.rows.value[5], r.rows.value[9], r.rows.value[10])
                     total = total + r.value
                 } else {
                     r.rows.outcomes = []
@@ -865,7 +713,7 @@ export default function Interactive() {
                         r.rows.outcomes.push(r.outcomes2)
                         r.rows.value.push(total_row)
                         r.value = total_row
-                        r.formula = r.f_string(r.rows.value)
+                        r.formula = r.f_formula(r.rows.value)
                         total = total + total_row
                     }
                 }
@@ -873,12 +721,11 @@ export default function Interactive() {
             }
             const listaTotales = t.rows.map(ele => ele.value)
             t.totalValue = total
-            t.formula = t.f_string(listaTotales, t.totalValue)
+            t.formula = t.f_formula(listaTotales, t.totalValue)
         }
         setTables(tables)
     }
 
-    console.log(tables);
     return (
         <div className='pt-12 pb-9'>
             <div className='u-container'>
