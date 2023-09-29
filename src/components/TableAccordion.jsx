@@ -1,6 +1,7 @@
 import * as Accordion from '@radix-ui/react-accordion';
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 import hexRgb from 'hex-rgb';
+import { valueFormat } from '../utils/functions'
 
 export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
     const rgb = hexRgb(color, { format: 'array', alpha: 0.1 })
@@ -31,7 +32,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                             <div className="col-span-2 flex items-center gap-x-8">
                                 <div className='w-6/12'>
                                     <h4 className='text-sm font-semibold text-black text-right'>
-                                        ${Intl.NumberFormat("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(item.value)}
+                                        ${valueFormat(item.value)}
                                     </h4>
                                 </div>
                                 <div className='6/12'>
@@ -64,7 +65,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                                         {item.rows?.value.map((v, i) => {
                                             return (
                                                 <p key={`value-${i + 1}`} className='text-sm font-semibold -translate-x-20 text-right'>
-                                                    {Intl.NumberFormat("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(v)}
+                                                    {valueFormat(v)}
                                                 </p>
                                             );
                                         })}

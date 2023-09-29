@@ -105,3 +105,7 @@ export function totalTable(lista, total) {
     str = str + ` = ${total}`
     return str
 }
+
+export function valueFormat(value) {
+    return Intl.NumberFormat("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(value)
+}

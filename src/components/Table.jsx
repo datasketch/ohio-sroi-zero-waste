@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import TableAccordion from './TableAccordion';
 import { useState } from 'react';
+import { valueFormat } from '../utils/functions'
 
 export default function Table({ color, data, isLarge }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -30,7 +31,7 @@ export default function Table({ color, data, isLarge }) {
                                         Total Value
                                     </p>
                                     <div className={classNames('bg-white rounded py-0.5 px-5', { 'border': isGeneric })} style={{ borderColor: color }}>
-                                        <p className='text-xl'><span className='text-silver-2'>$</span>{Intl.NumberFormat("en-US").format(data.totalValue.toFixed(2))}</p>
+                                        <p className='text-xl'><span className='text-silver-2'>$</span>{valueFormat(data.totalValue)}</p>
                                     </div>
                                 </div>
                             )
@@ -116,7 +117,7 @@ export default function Table({ color, data, isLarge }) {
                                         {description}
                                     </p>
                                     <p className='text-sm font-semibold text-black'>
-                                        ${Intl.NumberFormat("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(value)}
+                                        ${valueFormat(value)}
                                     </p>
                                 </div>
                             )

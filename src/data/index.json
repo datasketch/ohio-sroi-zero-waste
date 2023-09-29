@@ -450,8 +450,8 @@
         },
         {
             "type": "interative",
-            "label": "Interactive",
-            "title": "Interactive",
+            "label": "Scenario Simulation",
+            "title": "Scenario Simulation",
             "tables": [
                 {
                     "type": "economic_impact",
