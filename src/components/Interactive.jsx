@@ -195,7 +195,7 @@ const tablesReal = [
         "type": "economic_impact",
         "title": "Economic impact",
         "information": "Lorem ipsum",
-        "totalValue": "313.874,6",
+        "totalValue": 313874.6,
         "f_formula": totalTable,
         "rows": [
             {
@@ -324,7 +324,7 @@ const tablesReal = [
         "type": "social_impact",
         "title": "Social impact",
         "information": "Lorem ipsum",
-        "totalValue": "3.515.917,89",
+        "totalValue": 3515917.89,
         "f_formula": totalTable,
         "rows": [
             {
@@ -623,7 +623,7 @@ const tablesReal = [
         "type": "environmental_impact",
         "title": "Environmental Impact",
         "information": "Lorem ipsum",
-        "totalValue": "10.689.95",
+        "totalValue": 10689.95,
         "f_formula": totalTable,
         "rows": [
             {

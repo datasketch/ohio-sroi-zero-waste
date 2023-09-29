@@ -25,7 +25,7 @@
                     "type": "economic_impact",
                     "title": "Economic impact",
                     "information": "Lorem ipsum",
-                    "totalValue": "313.874,6",
+                    "totalValue": 313874.6,
                     "rows": [
                         {
                             "stakeholders": "Core Artists",
@@ -137,7 +137,7 @@
                     "type": "social_impact",
                     "title": "Social impact",
                     "information": "Lorem ipsum",
-                    "totalValue": "3.515.917,89",
+                    "totalValue": 3515917.89,
                     "rows": [
                         {
                             "stakeholders": "Core Artists",
@@ -386,7 +386,7 @@
                     "type": "environmental_impact",
                     "title": "Environmental Impact",
                     "information": "Lorem ipsum",
-                    "totalValue": "10.689.95",
+                    "totalValue": 10689.95,
                     "rows": [
                         {
                             "stakeholders": "Suppliers/Vendors",

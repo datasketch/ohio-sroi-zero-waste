@@ -31,7 +31,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                             <div className="col-span-2 flex items-center gap-x-8">
                                 <div className='w-6/12'>
                                     <h4 className='text-sm font-semibold text-black text-right'>
-                                        ${item.value}
+                                        ${Intl.NumberFormat("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(item.value)}
                                     </h4>
                                 </div>
                                 <div className='6/12'>
@@ -64,7 +64,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                                         {item.rows?.value.map((v, i) => {
                                             return (
                                                 <p key={`value-${i + 1}`} className='text-sm font-semibold -translate-x-20 text-right'>
-                                                    {v}
+                                                    {Intl.NumberFormat("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}).format(v)}
                                                 </p>
                                             );
                                         })}
