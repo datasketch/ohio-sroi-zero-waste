@@ -105,10 +105,10 @@ export default function Table({ color, data, isLarge }) {
                 <Tooltip anchorSelect={anchor} place="right" style={{ width: "250px" }}>
                     {data.tooltipText}
                 </Tooltip>
-                <div className={classNames('absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300', { '-right-full': hasLimit, 'right-4': !hasLimit})}>
+                <div className={classNames('lg:hidden absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300', { '-right-full': hasLimit, 'right-4': !hasLimit})}>
                     {'>'}
                 </div>
-                <div className={classNames('absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300', { '-left-full': !hasLimit, 'left-4': hasLimit})}>
+                <div className={classNames('lg:hidden absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300', { '-left-full': !hasLimit, 'left-4': hasLimit})}>
                     {'<'}
                 </div>
             </div>
