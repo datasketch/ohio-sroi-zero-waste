@@ -1,24 +1,49 @@
 import classNames from 'classnames';
 import TableAccordion from './TableAccordion';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { valueFormat } from '../utils/functions'
+import { Tooltip } from 'react-tooltip'
 
 export default function Table({ color, data, isLarge }) {
     const [isOpen, setIsOpen] = useState(false)
     const isGeneric = color === '#00694E'
     const hasRow = !!data.rows
+    const anchor = `.${data.tooltip}`
+    const tableRef = useRef()
+    const [hasLimit, setHasLimit] = useState(false)
+
+    useEffect(() => {
+        const element = tableRef.current
+        const { offsetWidth, scrollWidth } = element
+        const limitWidth = scrollWidth - offsetWidth
+
+        const handleScroll = (e) => {
+            const { scrollLeft } = e.target
+
+            if ((limitWidth - 5) > scrollLeft) {
+                setHasLimit(false)
+            } else {
+                setHasLimit(true)
+            }
+        }
+
+        element.addEventListener('scroll', handleScroll)
+
+        return () => element.removeEventListener('scroll', handleScroll)
+    }, [tableRef.current])
+
     if (isLarge) {
         return (
-            <div className='rounded-2xl overflow-hidden'>
+            <div className='rounded-2xl overflow-hidden shadow relative'>
                 {/* HEADING */}
                 <div className='pt-5 pb-2.5 pl-5 pr-8' style={{
                     backgroundColor: isGeneric ? '#fff' : color
                 }}>
-                    <div className='flex items-center justify-between'>
+                    <div className='flex flex-col lg:flex-col items-center justify-between'>
                         <div className='flex items-center gap-x-2'>
-                            <h3 className={classNames('text-xl', { 'text-white': !isGeneric, 'text-black': isGeneric })}>{data.title}</h3>
+                            <h3 className={classNames('text-base lg:text-xl', { 'text-white': !isGeneric, 'text-black': isGeneric })}>{data.title}</h3>
                             {hasRow && (
-                                <button>
+                                <button className={data.tooltip}>
                                     {!isGeneric && (<img src="/images/icons/information-icon.svg" alt="information icon" />)}
                                     {isGeneric && (<img src="/images/icons/information-generic-icon.svg" alt="information icon" />)}
                                 </button>
@@ -26,12 +51,12 @@ export default function Table({ color, data, isLarge }) {
                         </div>
                         {
                             hasRow && (
-                                <div className='flex items-center gap-x-4'>
-                                    <p className={classNames('text-sm', { 'text-white': !isGeneric, 'text-gray-2': isGeneric })}>
+                                <div className='flex items-center justify-between gap-x-4'>
+                                    <p className={classNames('text-xs lg:text-sm', { 'text-white': !isGeneric, 'text-gray-2': isGeneric })}>
                                         Total Value
                                     </p>
                                     <div className={classNames('bg-white rounded py-0.5 px-5', { 'border': isGeneric })} style={{ borderColor: color }}>
-                                        <p className='text-xl'><span className='text-silver-2'>$</span>{valueFormat(data.totalValue)}</p>
+                                        <p className='text-base lg:text-xl'><span className='text-black'>$</span>{valueFormat(data.totalValue)}</p>
                                     </div>
                                 </div>
                             )
@@ -41,35 +66,30 @@ export default function Table({ color, data, isLarge }) {
                 {/* ROW SUB HEADING */}
                 {hasRow && (
                     <>
-                        <div className='grid grid-cols-12 py-1 px-5 bg-white'>
-                            <div className="col-span-3">
-                                <h4 className='text-gray-2 text-sm'>
-                                    Stakeholders
-                                </h4>
+                        <div ref={tableRef} className='overflow-x-scroll lg:overflow-hidden'>
+                            <div className='w-[1000px] lg:w-auto'>
+                                <div className='grid grid-cols-12 py-1 px-5 bg-white'>
+                                    <div className="col-span-3">
+                                        <h4 className='text-gray-2 text-xs lg:text-sm'>
+                                            Who is impacted?
+                                        </h4>
+                                    </div>
+                                    <div className="col-span-7">
+                                        <h4 className='text-gray-2 text-xs lg:text-sm'>
+                                            What changed?
+                                        </h4>
+                                    </div>
+                                    <div className="col-span-2 pl-12">
+                                        <h4 className='text-gray-2 text-xs lg:text-sm flex gap-1'>
+                                            Value <img className='tooltip-rev' src="/images/icons/information-generic-icon.svg" alt="information icon" />
+                                        </h4>
+                                    </div>
+                                </div>
+                                {(data.type === 'economic_impact' || data.type === 'social_impact' || data.type === 'environmental_impact') && <TableAccordion setIsOpen={setIsOpen} color={color} rows={data.rows} />}
                             </div>
-                            <div className="col-span-7">
-                                <h4 className='text-gray-2 text-sm'>
-                                    Outcomes
-                                </h4>
-                            </div>
-                            <div className="col-span-2 pl-12">
-                                <h4 className='text-gray-2 text-sm'>
-                                    Value
-                                </h4>
-                            </div>
-                        </div>
-                        {(data.type === 'economic_impact' || data.type === 'social_impact' || data.type === 'environmental_impact') && <TableAccordion setIsOpen={setIsOpen} color={color} rows={data.rows} />}
-                        <div className='flex items-center justify-between py-4 px-5 bg-white'>
-                            <div>
-                                <p className={classNames('text-gray-2 text-sm duration-300', { 'invisible opacity-0': isOpen, 'visible opacity-100': !isOpen })}>
-                                    Formula
-                                </p>
-                            </div>
-                            <div className='pr-[4vw]'>
-                                <p className={classNames('text-gray-2 text-sm duration-300', { 'invisible opacity-0': isOpen, 'visible opacity-100': !isOpen })}>
-                                    {data.formula}
-                                </p>
-                            </div>
+                            <Tooltip anchorSelect=".tooltip-rev" place="right" style={{ width: "250px" }}>
+                                The values listed below are fiscal proxies, which are monetary representations of impacts for which there is no set market value. Fiscal proxies often take the form of costs avoided or benefits achieved.
+                            </Tooltip>
                         </div>
                     </>
                 )}
@@ -82,7 +102,17 @@ export default function Table({ color, data, isLarge }) {
                         </div>
                     )
                 }
+                <Tooltip anchorSelect={anchor} place="right" style={{ width: "250px" }}>
+                    {data.tooltipText}
+                </Tooltip>
+                <div className={classNames('absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300', { '-right-full': hasLimit, 'right-4': !hasLimit})}>
+                    {'>'}
+                </div>
+                <div className={classNames('absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300', { '-left-full': !hasLimit, 'left-4': hasLimit})}>
+                    {'<'}
+                </div>
             </div>
+
         )
     } else {
         return (

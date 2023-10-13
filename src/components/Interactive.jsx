@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Table from './Table';
-import {proxy1, proxy1_formula, proxy2, proxy2_formula, proxy3, proxy3_formula, proxy9, proxy9_formula, proxy10, proxy10_formula, proxy11, proxy11_formula, proxy12, proxy12_formula, proxy18_formula, environmental, totalTable} from '../utils/functions'
+import { proxy1, proxy1_formula, proxy2, proxy2_formula, proxy3, proxy3_formula, proxy9, proxy9_formula, proxy10, proxy10_formula, proxy11, proxy11_formula, proxy12, proxy12_formula, proxy18_formula, environmental, totalTable } from '../utils/functions'
 
 const variables = [
     {
@@ -187,6 +187,21 @@ const variables = [
         'id': 'var37',
         'description': 'For every $1 spent in a local store, $0.58 will be re-invested in the local community',
         'value': 0.58
+    },
+    {
+        'id': 'var38',
+        'description': 'Total Annual Operating Costs ',
+        'value': 695168
+    },
+    {
+        'id': 'var39',
+        'description': 'Total value of donations of materials',
+        'value': 10000
+    },
+    {
+        'id': 'var40',
+        'description': 'Arist support person time spent finding transportation',
+        'value': 2424
     }
 ]
 
@@ -211,14 +226,12 @@ const tablesReal = [
                     "outcomes": [
                         "Number of artists employed",
                         "Average number of hours worked by a core artist",
-                        "Average hourly wage earned by an artist",
-                        "Total Value of ability to make a wage in a creative capacity"
+                        "Average hourly wage earned by an artist"
                     ],
                     "value": [
                         24,
                         189,
-                        10.1,
-                        45813.6
+                        10.1
                     ]
                 },
                 "formula": "24 * 189 * 10.1 = 45813.6"
@@ -239,8 +252,7 @@ const tablesReal = [
                         "Number of part-time staff",
                         "Average wage of part-time staff artists",
                         "Number of cottage industry artists",
-                        "Average wage of cottage artists",
-                        "Total value for staff artists of Increased ability to be employed in a creative capacity"
+                        "Average wage of cottage artists"
                     ],
                     "value": [
                         6,
@@ -248,8 +260,7 @@ const tablesReal = [
                         2,
                         11172,
                         3,
-                        1671,
-                        221811
+                        1671
                     ]
                 },
                 "formula": "6 * 32409 + 2 * 11172 + 3 * 1671 = 221811"
@@ -266,13 +277,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 3",
                     "outcomes": [
                         "Number of OU Interns annually",
-                        "Increase in average reported FTE and PTE starting salary for graduates with service learning experience (Matthews et al., 2015)",
-                        "Value of increased experiential learning experience"
+                        "Increase in average reported FTE and PTE starting salary for graduates with service learning experience (Matthews et al., 2015)"
                     ],
                     "value": [
                         5,
-                        6500,
-                        32500
+                        6500
                     ]
                 },
                 "formula": "5 * 6500 = 32500"
@@ -289,13 +298,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 4",
                     "outcomes": [
                         "Total revenue from sales",
-                        "Consumers are willing to pay up to 5% more for environmentally friendly products (Holbrook, 2019).",
-                        "Value of ability to purchase goods to support a mission (consious consumption)"
+                        "Consumers are willing to pay up to 5% more for environmentally friendly products (Holbrook, 2019)."
                     ],
                     "value": [
                         275000,
-                        "5%",
-                        13750
+                        "5%"
                     ]
                 },
                 "formula": "275000 * 5% = 13750"
@@ -339,13 +346,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 6",
                     "outcomes": [
                         "Number of artists employed",
-                        "Wellbeing valuation of sense of identity",
-                        "Total value of building a sense of identity"
+                        "Wellbeing valuation of sense of identity"
                     ],
                     "value": [
                         24,
-                        1500,
-                        36000
+                        1500
                     ]
                 },
                 "formula"
@@ -363,13 +368,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 7",
                     "outcomes": [
                         "Number of artists employed",
-                        "Wellbeing valuation of independence/agency",
-                        "Total value of increased maturity and self-reliance"
+                        "Wellbeing valuation of independence/agency"
                     ],
                     "value": [
                         24,
-                        2500,
-                        60000
+                        2500
                     ]
                 },
                 "formula": "24 * 2500 = 60000"
@@ -386,13 +389,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 8",
                     "outcomes": [
                         "Number of artists employed",
-                        "Health benefits of having a sense of connection with others",
-                        "Total value of elevated well-being"
+                        "Health benefits of having a sense of connection with others"
                     ],
                     "value": [
                         24,
-                        2000,
-                        48000
+                        2000
                     ]
                 },
                 "formula": "24 * 2000 = 48000"
@@ -412,16 +413,14 @@ const tablesReal = [
                         "Number of fulltime staff (includes administrative roles)",
                         "Number of part-time staff",
                         "% time spent informally learning from peers",
-                        "FMV of creative teacher",
-                        "Value of increased reciprocal learning"
+                        "FMV of creative teacher"
                     ],
                     "value": [
                         24,
                         6,
                         2,
                         "15%",
-                        15000,
-                        72000
+                        15000
                     ]
                 },
                 "formula": "(24 + 6 + 2) * 15% * 15000 = 72000"
@@ -439,14 +438,12 @@ const tablesReal = [
                     "outcomes": [
                         "Number of Staff Artists",
                         "Number of fulltime staff (includes administrative roles)",
-                        "Health benefits of having sense of purpose at work",
-                        "Value of increased sense of purpose"
+                        "Health benefits of having sense of purpose at work"
                     ],
                     "value": [
                         6,
                         2,
-                        2500,
-                        20000
+                        2500
                     ]
                 },
                 "formula": "(6 + 2) * 2500 = 20000"
@@ -465,15 +462,13 @@ const tablesReal = [
                         "Number of artists employed (1 artist support person per artist)",
                         "Hours worked by artists",
                         "Average cost of respite care per hour in Ohio (zip recruiter average Ohio)",
-                        "Discount for counterfactual (number of artist support person who said they would take artist to dayhab instead)",
-                        "Total value of increased help with caretaking"
+                        "Discount for counterfactual (number of artist support person who said they would take artist to dayhab instead)"
                     ],
                     "value": [
                         24,
                         189,
                         15.52,
-                        "10%",
-                        63358.85
+                        "10%"
                     ]
                 },
                 "formula": "(24 * 189 * 15.52) - (24 * 189 * 15.52 * 10%) = 63358.85"
@@ -490,13 +485,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 12",
                     "outcomes": [
                         "Number of artist support people (24 artists multipled times 2 to represent family impacts)",
-                        "Wellbeing valuation of increased community connection",
-                        "Total value of increased sense of community inclusion"
+                        "Wellbeing valuation of increased community connection"
                     ],
                     "value": [
                         48,
-                        1600,
-                        76800
+                        1600
                     ]
                 },
                 "formula": "48 * 1600 = 76800"
@@ -513,13 +506,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 13",
                     "outcomes": [
                         "Number of artist support people reporting PW leads them to experience less stress about their artists's safety (24 artists multipled times 2 to represent family impacts)",
-                        "Health impacts of less stress in caregiving /value of knowing loved one is safe",
-                        "Total value of stress reduction"
+                        "Health impacts of less stress in caregiving /value of knowing loved one is safe"
                     ],
                     "value": [
                         48,
-                        2600,
-                        124800
+                        2600
                     ]
                 },
                 "formula": "48 + 2600 = 124800"
@@ -536,13 +527,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 14",
                     "outcomes": [
                         "Population of Athens City",
-                        "Value of placemaking (living in a place with art murals)",
-                        "Value of Improved community pride and identity "
+                        "Value of placemaking (living in a place with art murals)"
                     ],
                     "value": [
                         24130,
-                        100,
-                        2413000
+                        100
                     ]
                 },
                 "formula": "24130 * 100 = 2413000"
@@ -559,13 +548,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 15",
                     "outcomes": [
                         "Hours of volunteering from all PassionWorks volunteers",
-                        "Value of a volunteer hour",
-                        "Value of a place where people network and connect"
+                        "Value of a volunteer hour"
                     ],
                     "value": [
                         7712,
-                        29.17,
-                        224959.04
+                        29.17
                     ]
                 },
                 "formula": "7712 * 29.17 = 224959.04"
@@ -582,13 +569,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 16",
                     "outcomes": [
                         "Number of OU class observers/other OU activities",
-                        "Value of a micro-credential in cultural competence",
-                        "Value of development of cultural competence"
+                        "Value of a micro-credential in cultural competence"
                     ],
                     "value": [
                         3770,
-                        100,
-                        377000
+                        100
                     ]
                 },
                 "formula": "3770 * 100 = 377000"
@@ -605,13 +590,11 @@ const tablesReal = [
                     "stakeholders": "Proxy 17",
                     "outcomes": [
                         "Total PassionWorks revenue",
-                        "For every $1 spent in a local store, $0.58 will be re-invested in the local community",
-                        "Value of increased money flows"
+                        "For every $1 spent in a local store, $0.58 will be re-invested in the local community"
                     ],
                     "value": [
                         275000,
-                        0.58,
-                        159500
+                        0.58
                     ]
                 },
                 "formula": "275000 * 0.58 = 159500"
@@ -646,8 +629,7 @@ const tablesReal = [
                         "Total Tons of reused/upcycled materials (pounds to tons converstion)",
                         "metric tons CO2 equivalent per ton of food waste (O'Brien, 2016, Table 6)",
                         "Social Cost of Carbon",
-                        "Total carbon cost avoided of reused materials",
-                        "Total environmental savings - emobdied energy and social cost of carbon averted"
+                        "Total carbon cost avoided of reused materials"
                     ],
                     "value": [
                         720,
@@ -659,8 +641,7 @@ const tablesReal = [
                         1.85,
                         1.54,
                         151,
-                        430.20,
-                        10689.95
+                        430.20
                     ]
                 },
                 "formula": "430.20 + 10244.88 + 14.87 = 10689.95"
@@ -675,6 +656,7 @@ export default function Interactive() {
     const isGeneric = true
     const [outputs, setOutputs] = useState(variables)
     const [tables, setTables] = useState(tablesReal)
+    const [socialValue, setSocialValue] = useState(5.32)
 
     const updateFieldChanged = index => e => {
         let newArr = [...outputs]
@@ -686,6 +668,7 @@ export default function Interactive() {
 
     const updateTable = () => {
         let newTable = [...tables]
+        let social = 0
         for (let t of newTable) {
             let total = 0
             for (let r of t.rows) {
@@ -697,8 +680,8 @@ export default function Interactive() {
                     const result = r.funtion(temp[0], temp[1], temp[2])
                     r.rows.outcomes = result.out
                     r.rows.value = result.values
-                    r.value = result.values[10]
-                    r.formula = r.f_formula(r.rows.value[2], r.rows.value[5], r.rows.value[9], r.rows.value[10])
+                    r.value = result.total
+                    r.formula = r.f_formula(r.rows.value[2], r.rows.value[5], r.rows.value[9], r.value)
                     total = total + r.value
                 } else {
                     r.rows.outcomes = []
@@ -710,10 +693,8 @@ export default function Interactive() {
                             r.rows.value.push(found.value)
                         })
                         const total_row = r.funtion(r.rows.value)
-                        r.rows.outcomes.push(r.outcomes2)
-                        r.rows.value.push(total_row)
                         r.value = total_row
-                        r.formula = r.f_formula(r.rows.value)
+                        r.formula = r.f_formula([...r.rows.value, total_row])
                         total = total + total_row
                     }
                 }
@@ -722,7 +703,10 @@ export default function Interactive() {
             const listaTotales = t.rows.map(ele => ele.value)
             t.totalValue = total
             t.formula = t.f_formula(listaTotales, t.totalValue)
+            social = social + total
         }
+        social = social / (outputs[37].value + outputs[38].value)
+        setSocialValue(social)
         setTables(tables)
     }
 
@@ -730,11 +714,69 @@ export default function Interactive() {
         <div className='pt-12 pb-9'>
             <div className='u-container'>
                 <div className='rounded-2xl overflow-hidden mb-20'>
+                    <div className='flex'>
+                        <div className='m-5'>
+                            <h2 className="text-2xl text-center">
+                                For every
+                                <span className="font-semibold" style={{ color }}> $1</span>
+                                <br />
+                                Invested in Passion Works
+                            </h2>
+                            <div
+                                className="mt-9 bg-robin-egg-blue/5 py-8 px-10 rounded-lg text-center"
+                            >
+                                <p>A social value</p>
+                                <p className="text-3xl font-semibold mt-1" >
+                                    $ {socialValue.toFixed(2)}
+                                </p>
+                                <div className="bg-silver h-[0.5px] mt-5"></div>
+                                <p className="text-gray-2 text-center mt-3 text-sm">
+                                    Of social, economic, and environmental value is created.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className='pt-5 pb-2.5 pl-5 pr-8' style={{
+                                backgroundColor: isGeneric ? '#fff' : color
+                            }}>
+                                <div className='flex items-center gap-x-2'>
+                                    <h3 className='text-xl text-black'>Program Inputs</h3>
+                                </div>
+                            </div>
+
+                            <div className='grid grid-cols-12 py-1 px-5 bg-white'>
+                                <div className="col-span-8">
+                                    <h4 className='text-gray-2 text-sm'>
+                                        What are the costs?
+                                    </h4>
+                                </div>
+                                <div className="col-span-4 pl-12">
+                                    <h4 className='text-gray-2 text-sm'>
+                                        What are the numbers?
+                                    </h4>
+                                </div>
+                            </div>
+                            {
+                                outputs.slice(37, 40).map((item, i) => (
+                                    <div key={i} className='grid grid-cols-12 py-1 px-5 bg-white '>
+                                        <div className="col-span-8">
+                                            <h4 className='text-black'>
+                                                {item.description}
+                                            </h4>
+                                        </div>
+                                        <div className="col-span-4 pl-8">
+                                            <input type="text" value={item.value} onChange={updateFieldChanged(i + 37)} className="text-right w-14 " />
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
                     <div className='pt-5 pb-2.5 pl-5 pr-8' style={{
                         backgroundColor: isGeneric ? '#fff' : color
                     }}>
                         <div className='flex items-center gap-x-2'>
-                            <h3 className='text-xl text-black'>Program Inputs</h3>
+                            <h3 className='text-xl text-black'>Program Outputs</h3>
                         </div>
                     </div>
 
