@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 import { valueFormat } from '../utils/functions'
 import { Tooltip } from 'react-tooltip'
 
-export default function Table({ color, data, isLarge }) {
+export default function Table({ color, data, isLarge, top = "top-2/3", count }) {
     const [isOpen, setIsOpen] = useState(false)
     const isGeneric = color === '#00694E'
     const hasRow = !!data.rows
-    const anchor = `.${data.tooltip}`
+    const anchor = `.tooltip-value${count}`
     const tableRef = useRef()
     const [hasLimit, setHasLimit] = useState(false)
+
 
     useEffect(() => {
         const element = tableRef.current
@@ -19,7 +20,6 @@ export default function Table({ color, data, isLarge }) {
 
         const handleScroll = (e) => {
             const { scrollLeft } = e.target
-
             if ((limitWidth - 5) > scrollLeft) {
                 setHasLimit(false)
             } else {
@@ -36,27 +36,28 @@ export default function Table({ color, data, isLarge }) {
         return (
             <div className='rounded-2xl overflow-hidden shadow relative'>
                 {/* HEADING */}
-                <div className='pt-5 pb-2.5 pl-5 pr-8' style={{
+                <div className='pt-5 pb-2.5 pl-5 pr-4' style={{
                     backgroundColor: isGeneric ? '#fff' : color
                 }}>
-                    <div className='flex flex-col lg:flex-col items-center justify-between'>
+                    <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 justify-between'>
                         <div className='flex items-center gap-x-2'>
-                            <h3 className={classNames('text-base lg:text-xl', { 'text-white': !isGeneric, 'text-black': isGeneric })}>{data.title}</h3>
+                            <h3 className={classNames('text-base lg:text-xl', { 'text-white': !isGeneric, 'text-black': isGeneric })}>{data.title}
                             {hasRow && (
-                                <button className={data.tooltip}>
+                                <button className={`pl-1 tooltip-value${count}`}>
                                     {!isGeneric && (<img src="/images/icons/information-icon.svg" alt="information icon" />)}
                                     {isGeneric && (<img src="/images/icons/information-generic-icon.svg" alt="information icon" />)}
                                 </button>
                             )}
+                            </h3>
                         </div>
                         {
                             hasRow && (
-                                <div className='flex items-center justify-between gap-x-4'>
+                                <div className='flex md:justify-end justify-between items-center gap-x-4'>
                                     <p className={classNames('text-xs lg:text-sm', { 'text-white': !isGeneric, 'text-gray-2': isGeneric })}>
                                         Total Value
                                     </p>
                                     <div className={classNames('bg-white rounded py-0.5 px-5', { 'border': isGeneric })} style={{ borderColor: color }}>
-                                        <p className='text-base lg:text-xl'><span className='text-black'>$</span>{valueFormat(data.totalValue)}</p>
+                                        <p className='text-base lg:text-xl'>{valueFormat(data.totalValue, data?.unit)}</p>
                                     </div>
                                 </div>
                             )
@@ -81,13 +82,13 @@ export default function Table({ color, data, isLarge }) {
                                     </div>
                                     <div className="col-span-2 pl-12">
                                         <h4 className='text-gray-2 text-xs lg:text-sm flex gap-1'>
-                                            Value <img className='tooltip-rev' src="/images/icons/information-generic-icon.svg" alt="information icon" />
+                                            Value <img className={`value${count}`} src="/images/icons/information-generic-icon.svg" alt="information icon" />
                                         </h4>
                                     </div>
                                 </div>
-                                {(data.type === 'economic_impact' || data.type === 'social_impact' || data.type === 'environmental_impact') && <TableAccordion setIsOpen={setIsOpen} color={color} rows={data.rows} />}
+                                {(data.id === 'economic_impact' || data.id === 'social_impact' || data.id === 'environmental_impact') && <TableAccordion setIsOpen={setIsOpen} color={color} rows={data.rows} />}
                             </div>
-                            <Tooltip anchorSelect=".tooltip-rev" place="right" style={{ width: "250px" }}>
+                            <Tooltip anchorSelect={`.value${count}`} place="right" style={{ width: "250px" }}>
                                 The values listed below are fiscal proxies, which are monetary representations of impacts for which there is no set market value. Fiscal proxies often take the form of costs avoided or benefits achieved.
                             </Tooltip>
                         </div>
@@ -103,16 +104,15 @@ export default function Table({ color, data, isLarge }) {
                     )
                 }
                 <Tooltip anchorSelect={anchor} place="right" style={{ width: "250px" }}>
-                    {data.tooltipText}
+                    {data.tooltip}
                 </Tooltip>
-                <div className={classNames('lg:hidden absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300', { '-right-full': hasLimit, 'right-4': !hasLimit})}>
+                <div className={classNames(`absolute ${top} -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300 lg:hidden`, { '-right-full': hasLimit, 'right-4': !hasLimit})}>
                     {'>'}
                 </div>
-                <div className={classNames('lg:hidden absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300', { '-left-full': !hasLimit, 'left-4': hasLimit})}>
+                <div className={classNames(`absolute ${top} -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300 lg:hidden`, { '-left-full': !hasLimit, 'left-4': hasLimit})}>
                     {'<'}
                 </div>
             </div>
-
         )
     } else {
         return (
@@ -140,14 +140,14 @@ export default function Table({ color, data, isLarge }) {
                 </div>
                 <div className='bg-white pb-10 pl-5 pr-8'>
                     {
-                        data.rows.map(({ description, value }, i) => {
+                        data.rows.map(({ description, value, unit }, i) => {
                             return (
                                 <div key={`row-${i + 1}`} className='flex items-center justify-between border-b-[0.5px] border-b-silver py-1'>
                                     <p className='text-black'>
                                         {description}
                                     </p>
                                     <p className='text-sm font-semibold text-black'>
-                                        ${valueFormat(value)}
+                                        {valueFormat(value, unit)}
                                     </p>
                                 </div>
                             )
