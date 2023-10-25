@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Table from './Table';
 import data from '../data/format.json'
 import classNames from 'classnames';
-import { getNumbers, valueFormat } from '../utils/functions';
+import { formatAs, parseToNumber } from '../utils';
 // import { proxy1, proxy1_formula, proxy2, proxy2_formula, proxy3, proxy3_formula, proxy9, proxy9_formula, proxy10, proxy10_formula, proxy11, proxy11_formula, proxy12, proxy12_formula, proxy18_formula, environmental, totalTable } from '../utils/functions'
 
 /* const variables = [
@@ -656,7 +656,7 @@ import { getNumbers, valueFormat } from '../utils/functions';
 
 
 
-export default function Interactive({top = "top-2/3"}) {
+export default function Interactive({ top = "top-2/3" }) {
     const color = '#00694E'
     const isGeneric = true
     const [values, setValues] = useState([...data.proxy_inputs, ...data.proxy_values])
@@ -670,7 +670,7 @@ export default function Interactive({top = "top-2/3"}) {
 
     const updateFieldChanged = index => e => {
         let newArr = [...outputs]
-        newArr[index].value = e.target.value === '' ? 0 : getNumbers(e.target.value)
+        newArr[index].value = e.target.value === '' ? 0 : parseToNumber(e.target.value)
 
         setOutputs(newArr);
         updateTable()
@@ -795,7 +795,7 @@ export default function Interactive({top = "top-2/3"}) {
                                                     </h4>
                                                 </div>
                                                 <div className="col-span-4 pl-8">
-                                                    <input type="text" value={valueFormat(item.value, item?.unit)} onChange={updateFieldChanged(i)} className="w-full text-right" />
+                                                    <input type="text" value={formatAs(item.value, item.unit)} onChange={updateFieldChanged(i)} className="w-full text-right" />
                                                 </div>
                                             </div>
                                         ))
@@ -843,7 +843,7 @@ export default function Interactive({top = "top-2/3"}) {
                                                 </h4>
                                             </div>
                                             <div className="col-span-2 pl-8">
-                                                <input type="text" value={valueFormat(item.value, item?.unit)} onChange={updateFieldChanged(i + 3)} className="w-full text-end" />
+                                                <input type="text" value={formatAs(item.value, item.unit)} onChange={updateFieldChanged(i + 3)} className="w-full text-end" />
                                             </div>
                                         </div>
                                     ))

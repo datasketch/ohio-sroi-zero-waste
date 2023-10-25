@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import TableAccordion from './TableAccordion';
 import { useEffect, useRef, useState } from 'react';
-import { valueFormat } from '../utils/functions'
 import { Tooltip } from 'react-tooltip'
+import { formatAs } from '../utils';
 
 export default function Table({ color, data, isLarge, top = "top-2/3", count }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -42,12 +42,12 @@ export default function Table({ color, data, isLarge, top = "top-2/3", count }) 
                     <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 justify-between'>
                         <div className='flex items-center gap-x-2'>
                             <h3 className={classNames('text-base lg:text-xl', { 'text-white': !isGeneric, 'text-black': isGeneric })}>{data.title}
-                            {hasRow && (
-                                <button className={`pl-1 tooltip-value${count}`}>
-                                    {!isGeneric && (<img src="/images/icons/information-icon.svg" alt="information icon" />)}
-                                    {isGeneric && (<img src="/images/icons/information-generic-icon.svg" alt="information icon" />)}
-                                </button>
-                            )}
+                                {hasRow && (
+                                    <button className={`pl-1 tooltip-value${count}`}>
+                                        {!isGeneric && (<img src="/images/icons/information-icon.svg" alt="information icon" />)}
+                                        {isGeneric && (<img src="/images/icons/information-generic-icon.svg" alt="information icon" />)}
+                                    </button>
+                                )}
                             </h3>
                         </div>
                         {
@@ -57,7 +57,7 @@ export default function Table({ color, data, isLarge, top = "top-2/3", count }) 
                                         Total Value
                                     </p>
                                     <div className={classNames('bg-white rounded py-0.5 px-5', { 'border': isGeneric })} style={{ borderColor: color }}>
-                                        <p className='text-base lg:text-xl'>{valueFormat(data.totalValue, data?.unit)}</p>
+                                        <p className='text-base lg:text-xl'>{formatAs(data.totalValue, 'currency')}</p>
                                     </div>
                                 </div>
                             )
@@ -106,10 +106,10 @@ export default function Table({ color, data, isLarge, top = "top-2/3", count }) 
                 <Tooltip anchorSelect={anchor} place="right" style={{ width: "250px" }}>
                     {data.tooltip}
                 </Tooltip>
-                <div className={classNames(`absolute ${top} -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300 lg:hidden`, { '-right-full': hasLimit, 'right-4': !hasLimit})}>
+                <div className={classNames(`absolute ${top} -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300 lg:hidden`, { '-right-full': hasLimit, 'right-4': !hasLimit })}>
                     {'>'}
                 </div>
-                <div className={classNames(`absolute ${top} -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300 lg:hidden`, { '-left-full': !hasLimit, 'left-4': hasLimit})}>
+                <div className={classNames(`absolute ${top} -translate-y-1/2 w-8 h-8 bg-robin-egg-blue text-white text-2xl rounded-full grid place-items-center duration-300 lg:hidden`, { '-left-full': !hasLimit, 'left-4': hasLimit })}>
                     {'<'}
                 </div>
             </div>
@@ -147,7 +147,7 @@ export default function Table({ color, data, isLarge, top = "top-2/3", count }) 
                                         {description}
                                     </p>
                                     <p className='text-sm font-semibold text-black'>
-                                        {valueFormat(value, unit)}
+                                        {value}
                                     </p>
                                 </div>
                             )

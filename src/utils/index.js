@@ -1,3 +1,5 @@
+import numeral from 'numeral';
+
 export function proxy1(lista) {
     return lista[0] * lista[1] * lista[2]
 }
@@ -106,25 +108,25 @@ export function totalTable(lista, total) {
     return str
 }
 
-export function valueFormat(value, unit) {
-    let config = {}
+export function formatAs(txt, unit = '') {
+    let value = ''
 
     switch (unit) {
         case 'currency':
-            config = { style: 'currency', currency: 'USD' }
+            value = '$0,0'
             break;
         case 'percentage':
-            config = { style: 'percent' }
-            break;
-        case '':
-            config = {}
+            value = '0%'
             break;
         default:
-            config = { style: 'currency', currency: 'USD' }
+            value = '0,0'
             break;
     }
 
-    return Intl.NumberFormat("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2, ...config }).format(+value)
+    return numeral(txt).format(value)
 }
 
-export const getNumbers = (txt) => parseFloat(txt.match(/[\d.]+/g).join(''))
+export function parseToNumber(txt) {
+    return numeral(txt).value()
+}
+
