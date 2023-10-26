@@ -2,7 +2,7 @@ import * as Accordion from '@radix-ui/react-accordion';
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 import hexRgb from 'hex-rgb';
 import data from "../data/format.json";
-import { formatAs } from '../utils';
+import { formatAs, valueFormat } from '../utils';
 
 export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
     const rgb = hexRgb(color, { format: 'array', alpha: 0.1 })
@@ -53,12 +53,12 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                                 </h4>
                             </div>
                             <div className="col-span-2 flex items-center gap-x-8">
-                                <div className='w-6/12'>
+                                <div className='w-9/12'>
                                     <h4 className='text-sm font-semibold text-black text-right'>
-                                        {formatAs(item.value, 'currency')}
+                                        $ {valueFormat(item.value)}
                                     </h4>
                                 </div>
-                                <div className='6/12'>
+                                <div className='w-3/12'>
                                     <Accordion.Trigger onClick={(e) => getDataState(e)} className="AccordionTrigger" style={{ backgroundColor: color }}>
                                         <ChevronRightIcon className="AccordionChevron" aria-hidden />
                                     </Accordion.Trigger>

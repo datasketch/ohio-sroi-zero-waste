@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import TableAccordion from './TableAccordion';
 import { useEffect, useRef, useState } from 'react';
 import { Tooltip } from 'react-tooltip'
-import { formatAs } from '../utils';
+import { formatAs, valueFormat } from '../utils';
 
 export default function Table({ color, data, isLarge, top = "top-2/3", count }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -57,7 +57,7 @@ export default function Table({ color, data, isLarge, top = "top-2/3", count }) 
                                         Total Value
                                     </p>
                                     <div className={classNames('bg-white rounded py-0.5 px-5', { 'border': isGeneric })} style={{ borderColor: color }}>
-                                        <p className='text-base lg:text-xl'>{formatAs(data.totalValue, 'currency')}</p>
+                                        <p className='text-base lg:text-xl'>$ {valueFormat(data.totalValue)}</p>
                                     </div>
                                 </div>
                             )

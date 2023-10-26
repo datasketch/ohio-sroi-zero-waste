@@ -14,7 +14,6 @@ export default function CardAmount({ color = '#00694E', title, amount, cardAmoun
                 className="mt-9 rounded-lg text-center"
             >
                 <div className="flex justify-center text-2xl gap-x-2">
-                    {/* <p>{cardAmount.label}</p> */}
                     <p className="text-2xl font-semibold mt-1" style={{ color }}>
                         $ {cardAmount.return}
                     </p>
