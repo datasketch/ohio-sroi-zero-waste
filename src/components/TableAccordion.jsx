@@ -3,8 +3,9 @@ import { ChevronRightIcon } from '@radix-ui/react-icons';
 import hexRgb from 'hex-rgb';
 import data from "../data/format.json";
 import { formatAs, valueFormat } from '../utils';
+import classNames from 'classnames';
 
-export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
+export default function TableAccordion({ color = '#00694E', setIsOpen, rows, span = true }) {
     const rgb = hexRgb(color, { format: 'array', alpha: 0.1 })
     const rgba = `rgba(${rgb.join(', ')})`
 
@@ -42,7 +43,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                 rows && rows.map((item, i) => (
                     <Accordion.Item key={i} className='AccordionItem' value={`item-${i}`}>
                         <Accordion.Header className='AccordionHeader' style={{ color: rgb, backgroundColor: rgba, borderColor: color }}>
-                            <div className="col-span-3">
+                            <div className={classNames('', { 'col-span-2': !span, 'col-span-3': span })}>
                                 <h4 className='text-sm lg:text-base text-black'>
                                     {item.stakeholders}
                                 </h4>
@@ -52,7 +53,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                                     {item.description}
                                 </h4>
                             </div>
-                            <div className="col-span-2 flex items-center gap-x-8">
+                            <div className={classNames('flex items-center gap-x-8', { 'col-span-3': !span, 'col-span-2': span })}>
                                 <div className='w-9/12'>
                                     <h4 className='text-sm font-semibold text-black text-right'>
                                         $ {valueFormat(item.value)}
@@ -67,7 +68,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                         </Accordion.Header>
                         <Accordion.Content className="AccordionContent" style={{ backgroundColor: rgba, borderColor: color }}>
                             <div className='AccordionContentChildren' style={{ borderColor: color }}>
-                                <div className="col-span-3">
+                                <div className={classNames('', { 'col-span-2': !span, 'col-span-3': span })}>
                                     <p className='text-black text-sm'>
                                         How do we calculate this?
                                     </p>
@@ -83,7 +84,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows }) {
                                         })}
                                     </div>
                                 </div>
-                                <div className="col-span-2">
+                                <div className={classNames('', { 'col-span-3': !span, 'col-span-2': span })}>
                                     <div className='space-y-4'>
                                         {item.rows?.map((v, i) => {
                                             return (

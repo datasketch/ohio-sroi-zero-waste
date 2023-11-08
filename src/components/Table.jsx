@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Tooltip } from 'react-tooltip'
 import { formatAs, valueFormat } from '../utils';
 
-export default function Table({ color, data, isLarge, top = "top-2/3", count }) {
+export default function Table({ color, data, isLarge, top = "top-2/3", count, span = true }) {
     const [isOpen, setIsOpen] = useState(false)
     const isGeneric = color === '#00694E'
     const hasRow = !!data.rows
@@ -70,7 +70,7 @@ export default function Table({ color, data, isLarge, top = "top-2/3", count }) 
                         <div ref={tableRef} className='overflow-x-scroll lg:overflow-hidden'>
                             <div className='w-[1000px] lg:w-auto'>
                                 <div className='grid grid-cols-12 py-1 px-5 bg-white'>
-                                    <div className="col-span-3">
+                                    <div className={classNames('', { 'col-span-2': !span, 'col-span-3': span })}>
                                         <h4 className='text-gray-2 text-xs lg:text-sm'>
                                             Who is impacted?
                                         </h4>
@@ -80,13 +80,13 @@ export default function Table({ color, data, isLarge, top = "top-2/3", count }) 
                                             What changed?
                                         </h4>
                                     </div>
-                                    <div className="col-span-2 pl-12">
+                                    <div className={classNames('pl-12', { 'col-span-3': !span, 'col-span-2': span })}>
                                         <h4 className='text-gray-2 text-xs lg:text-sm flex gap-1'>
                                             Value <img className={`value${count}`} src="/images/icons/information-generic-icon.svg" alt="information icon" />
                                         </h4>
                                     </div>
                                 </div>
-                                {(data.id === 'economic_impact' || data.id === 'social_impact' || data.id === 'environmental_impact') && <TableAccordion setIsOpen={setIsOpen} color={color} rows={data.rows} />}
+                                {(data.id === 'economic_impact' || data.id === 'social_impact' || data.id === 'environmental_impact') && <TableAccordion setIsOpen={setIsOpen} color={color} rows={data.rows} span={span} />}
                             </div>
                             <Tooltip anchorSelect={`.value${count}`} place="right" style={{ width: "250px" }}>
                                 The values listed below are fiscal proxies, which are monetary representations of impacts for which there is no set market value. Fiscal proxies often take the form of costs avoided or benefits achieved.

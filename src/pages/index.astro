@@ -49,11 +49,6 @@ import data from "../data/format.json";
             </div>
           </div>
         </div>
-        <div class="mx-auto max-w-[720px] text-center mt-10 px-4">
-          <p class="text-sm lg:text-base">
-            {data.general.description}
-          </p>
-        </div>
         <div class="bg-gray h-[1px] max-w-[936px] mx-auto mt-8 lg:mt-12 px-9">
         </div>
         <div class="mt-10 lg:mt-20">
@@ -77,14 +72,16 @@ import data from "../data/format.json";
         </div>
       </div>
     </div>
-    <div class="flex items-center justify-center">
-      <p class="text-darmouth-green text-xl md:text-2xl font-semibold">
-        Look at the details
-      </p>
-    </div>
   </div>
   <!--  -->
   <div>
     <TabSection color={data.general.theme} tabs={data.tabs} client:load />
+  </div>
+  <div class='u-container py-16 flex gap-x-16 items-center'>
+    <img src="/images/idea 1.svg" alt="">
+    <img src="/images/div2.svg" alt="">
+    <p class="text-sm lg:text-base">
+      {data.general.description}
+    </p>
   </div>
 </BaseLayout>

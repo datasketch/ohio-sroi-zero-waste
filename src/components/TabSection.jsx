@@ -28,6 +28,11 @@ export default function TabSection({ color = '#00694E', tabs }) {
                                 item.type === 'table' && (
                                     <div className='pt-12 pb-9'>
                                         <div className='u-container'>
+                                            <div className="flex items-center justify-start pb-12">
+                                                <p className="text-darmouth-green text-xl md:text-2xl font-semibold">
+                                                    Look at the details
+                                                </p>
+                                            </div>
                                             <div className='space-y-12'>
                                                 {/* TABLES */}
                                                 {
@@ -61,7 +66,7 @@ export default function TabSection({ color = '#00694E', tabs }) {
                                 item.type === 'references' && (
                                     <div className='py-12 lg:py-16 xl:py-20'>
                                         <div className='u-container'>
-                                            <References list={item.list}/>
+                                            <References list={item.list} />
                                         </div>
                                     </div>
                                 )
