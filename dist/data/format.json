@@ -409,13 +409,15 @@
             "id": "starting_salary_increase",
             "value": 6500,
             "unit": "currency",
-            "description": "Increase in average reported FTE and PTE starting salary for graduates with service learning experience (Matthews et al., 2015)"
+            "description": "Increase in average reported FTE and PTE starting salary for graduates with service learning experience (Matthews et al., 2015)",
+            "ref": true
         },
         {
             "id": "consumers_willing_pay",
             "value": 0.05,
             "unit": "percentage",
-            "description": "Consumers are willing to pay up to 5% more for environmentally friendly products (Holbrook, 2019)."
+            "description": "Consumers are willing to pay up to 5% more for environmentally friendly products (Holbrook, 2019).",
+            "ref": true
         },
         {
             "id": "valuation_sense_identity",
@@ -457,7 +459,8 @@
             "id": "cost_respite_care_ohio",
             "value": 15.52,
             "unit": "",
-            "description": "Average cost of respite care per hour in Ohio (zip recruiter average Ohio)"
+            "description": "Average cost of respite care per hour in Ohio (zip recruiter average Ohio)",
+            "ref": true
         },
         {
             "id": "discount_counterfactual",
@@ -511,19 +514,22 @@
             "id": "value_aluminum",
             "value": 14229,
             "unit": "currency",
-            "description": "Dollar Value of EC per 1000 kg of aluminum framing ($) (Greenspec, 2023)"
+            "description": "Dollar Value of EC per 1000 kg of aluminum framing ($) (Greenspec, 2023)",
+            "ref": true
         },
         {
             "id": "value_wood",
             "value": 36.72,
             "unit": "currency",
-            "description": "Dollar Value of EC per 1000 kg of processed wood ($) (Greenspec, 2023)"
+            "description": "Dollar Value of EC per 1000 kg of processed wood ($) (Greenspec, 2023)",
+            "ref": true
         },
         {
             "id": "co2_by_waste",
             "value": 1.54,
             "unit": "",
-            "description": "metric tons CO2 equivalent per ton of food waste (O'Brien, 2016, Table 6)"
+            "description": "metric tons CO2 equivalent per ton of food waste (O'Brien, 2016, Table 6)",
+            "ref": true
         },
         {
             "id": "social_cost_carbon",

@@ -5,10 +5,13 @@ import OutcomeChain from './OutcomeChain';
 import References from './References';
 
 
-export default function TabSection({ color = '#00694E', tabs }) {
+export default function TabSection({ color = '#00694E', tabs, url, data }) {   
+    const searchParams = new URLSearchParams(url)
+    const tab = searchParams.get("query") === "ref"  ? "tab2" : "tab1"
+
     return (
         // TAB PARENT
-        <Tabs.Root defaultValue="tab1" orientation="vertical">
+        <Tabs.Root defaultValue={tab} orientation="vertical">
             {/* TABS CHILDREN */}
             <Tabs.List className='u-container flex' aria-label="tabs">
                 {
@@ -39,7 +42,7 @@ export default function TabSection({ color = '#00694E', tabs }) {
                                                     item.tables.map((table, i) => {
                                                         if (table.id === 'economic_impact' || table.id === 'social_impact' || table.id === 'environmental_impact') {
                                                             return (
-                                                                <Table key={`table-${i + 1}`} color={color} data={table} isLarge count={i} />
+                                                                <Table key={`table-${i + 1}`} color={color} data={table} isLarge count={i} data2={data} />
                                                             )
                                                         } else {
                                                             return (
@@ -73,7 +76,7 @@ export default function TabSection({ color = '#00694E', tabs }) {
                             }
                             {
                                 item.type === 'interative' && (
-                                    <Interactive />
+                                    <Interactive data={data}/>
                                 )
                             }
                         </Tabs.Content>
