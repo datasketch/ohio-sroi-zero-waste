@@ -72,8 +72,8 @@ export default function Home() {
         <TabSection color={data.general.theme} tabs={data.tabs} url={url} data={data} />
       </div>
       <div className='u-container py-16 flex gap-x-16 items-center'>
-        <img src="/images/idea 1.svg" alt="" />
-        <img src="/images/div2.svg" alt="" />
+        <img src="./images/idea 1.svg" alt="" />
+        <img src="./images/div2.svg" alt="" />
         <p className="text-sm lg:text-base">
           {data.general.description}
         </p>
