@@ -1,7 +1,7 @@
 import CardAmount from "./CardAmount";
 import TabSection from "./TabSection";
 
-const data = await fetch('/data/format.json').then((response) =>
+const data = await fetch('./data/format.json').then((response) =>
   response.json()
 );
 
