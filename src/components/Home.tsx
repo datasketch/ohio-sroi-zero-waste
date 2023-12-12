@@ -36,7 +36,7 @@ export default function Home() {
                   <div className="flex-shrink-0">
                     <img src={data.general.logo} alt={data.general.title} />
                   </div>
-                  <div className="text-center">
+                  <div className="text-center text-xl">
                     <h1>For every
                       <span className="font-semibold text-3xl" style={{ color }}> ${data.general.invested} </span>
                       invested in {data.general.title} creates <span className="font-semibold text-3xl" style={{ color }}> ${data.general.return} </span>{data.general.return_description}</h1>
