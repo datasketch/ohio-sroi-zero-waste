@@ -57,7 +57,7 @@ export default function TableAccordion({ color = '#00694E', setIsOpen, rows, spa
                   </h4>
                 </div>
                 <div className='w-3/12'>
-                  <Accordion.Trigger onClick={(e) => getDataState(e)} className="AccordionTrigger" style={{ backgroundColor: color }}>
+                  <Accordion.Trigger onClick={(e) => getDataState(e)} className="AccordionTrigger" style={{ backgroundColor: color }} name={`${item.stakeholders} details`}>
                     <ChevronRightIcon className="AccordionChevron" aria-hidden />
                   </Accordion.Trigger>
                 </div>

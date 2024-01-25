@@ -13,7 +13,7 @@ export default function TabSection({ color = '#00694E', tabs, url, data }) {
 
   return (
     // TAB PARENT
-    <Tabs.Root defaultValue={tab} orientation="vertical">
+    <Tabs.Root defaultValue={tab} orientation="horizontal">
       {/* TABS CHILDREN */}
       <Tabs.List className='u-container flex' aria-label="tabs">
         {
