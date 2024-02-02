@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '18'
       - run: npm ci
-      - run: npm run build
+      - run: PREFIX_ASSETS=yes npm run build
       - name: Commit changes
         run: |
           git config user.name github-actions
