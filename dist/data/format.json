@@ -1,11 +1,11 @@
 {
   "general": {
-    "theme": "#00C1D4",
+    "theme": "#45C1D5",
     "top_logo": "/images/logo.svg",
-    "logo": "./images/logo-1.svg",
-    "title": "PASSION WORKS STUDIO",
+    "logo": "/images/logo-1.svg",
+    "title": "ZERO WASTE INITIATIVE",
     "invested": 1,
-    "return": 5.85,
+    "return": 6.29,
     "return_description": "of social, environmental, and economic impact",
     "banner": "/images/home.svg",
     "subtitle": "Social Return on Investment Impact Calculator created by",
@@ -13,588 +13,723 @@
   },
   "tabs": [
     {
-      "label": "Dashboard",
+      "label": "Dashboard values",
       "type": "table",
       "tables": [
         {
           "id": "economic_impact",
           "title": "What economic impact is created?",
           "tooltip": "Economic impact includes changes to individual or collective financial assets including profit, savings, currency circulation, and built capital.",
-          "totalValue": 325328,
-          "rows": [
-            {
-              "id": "proxy_1",
-              "stakeholders": "Core Artists",
-              "description": "Ability to make a wage in a creative capacity",
-              "value": 57267,
-              "variables": "artists_employed,hours_work_artist,wage_earned_artist",
-              "formula": "artists_employed * hours_work_artist * wage_earned_artist",
-              "changed": false
-            },
-            {
-              "id": "proxy_2",
-              "stakeholders": "Staff Artists",
-              "description": "Increased ability to be employed in a creative capacity",
-              "value": 221811,
-              "variables": "fulltime_staff,wage_fulltime,part_time_staff,wage_part_time,cottage_artists,wage_cottage",
-              "formula": "fulltime_staff * wage_fulltime + part_time_staff * wage_part_time + cottage_artists * wage_cottage",
-              "changed": false
-            },
-            {
-              "id": "proxy_3",
-              "stakeholders": "OU Students",
-              "description": "Increased experiential learning experience",
-              "value": 32500,
-              "variables": "OU_interns_annual,starting_salary_increase",
-              "formula": "OU_interns_annual * starting_salary_increase",
-              "changed": false
-            },
-            {
-              "id": "proxy_4",
-              "stakeholders": "Customers",
-              "description": "Ability to purchase goods to support a mission (consious consumption)",
-              "value": 13750,
-              "variables": "revenue_sales,consumers_willing_pay",
-              "formula": "revenue_sales * consumers_willing_pay",
-              "changed": false
-            }
-          ],
-          "formula": "proxy_1 + proxy_2 + proxy_3 + proxy_4",
-          "changed": false
-        },
-        {
-          "id": "social_impact",
-          "title": "What social impact is created?",
-          "tooltip": "Social impact includes changes to individuals, groups of people, and organizations in areas such as health, well-being, safety, relationship, and belonging.",
-          "totalValue": 3791157,
+          "totalValue": "1453501.198",
           "rows": [
             {
               "id": "proxy_6",
-              "type": "social_impact",
-              "stakeholders": "Core Artists",
-              "description": "Artists build a sense of identity",
-              "value": 45000,
-              "variables": "artists_employed,valuation_sense_identity",
-              "formula": "artists_employed * valuation_sense_identity",
+              "stakeholders": "Small Businesses",
+              "description": "total impact on businesses linked to the Reuse Corridor",
+              "value": 406350,
+              "formula": "number_of_businesses*Average_revenue_of_small_businesses_with_one_to_four_employees*Estimated_proportion_of_each_business_supported_by_corridor",
+              "variables": "number_of_businesses,Average_revenue_of_small_businesses_with_one_to_four_employees,Estimated_proportion_of_each_business_supported_by_corridor",
               "changed": false
             },
             {
               "id": "proxy_7",
-              "type": "social_impact",
-              "stakeholders": "Core Artists",
-              "description": "Increased maturity and self-reliance",
-              "value": 75000,
-              "variables": "artists_employed,valuation_independence",
-              "formula": "artists_employed * valuation_independence",
+              "stakeholders": "Makers",
+              "description": "total impact of maker profit",
+              "value": 29565,
+              "formula": "Number_of_Makers_using_recycled_materials_for_products_sold*34.3%_of_nonemployer_firms_have_owners_who_work_at_least_40_hours_a_week_*%_of_products_on_eBay_are_used_or_refurbished*home-based_businesses_had_less_than_$25_000_in_revenue_",
+              "variables": "Number_of_Makers_using_recycled_materials_for_products_sold,34.3%_of_nonemployer_firms_have_owners_who_work_at_least_40_hours_a_week_,%_of_products_on_eBay_are_used_or_refurbished,home-based_businesses_had_less_than_$25_000_in_revenue_",
               "changed": false
             },
             {
               "id": "proxy_8",
-              "type": "social_impact",
-              "stakeholders": "Core Artists",
-              "description": "Elevated well-being",
-              "value": 60000,
-              "variables": "artists_employed,health_benefits_connection",
-              "formula": "artists_employed * health_benefits_connection",
+              "stakeholders": "Government Officials, Agencies, Festival Owners",
+              "description": "total impact of revenue generated by Zero Waste activities fed back to Rural Action nonprofit activities",
+              "value": 215792.45,
+              "formula": "revenue_generated_by_ZW_from_government_contracts_in_2020+revenue_generated_by_ZWEP_from_Festival_Contracts_in_2019",
+              "variables": "revenue_generated_by_ZW_from_government_contracts_in_2020,revenue_generated_by_ZWEP_from_Festival_Contracts_in_2019",
               "changed": false
             },
             {
               "id": "proxy_9",
-              "type": "social_impact",
-              "stakeholders": "Core Artists",
-              "description": "Increased reciprocal learning - reciprocal mentoring (skill building/proficiency)",
-              "value": 85500,
-              "variables": "artists_employed,fulltime_staff,part_time_staff,time_learn_from_peers,FMV_teacher",
-              "formula": "(artists_employed + fulltime_staff + part_time_staff) * time_learn_from_peers * FMV_teacher",
+              "stakeholders": "Government Officials, Agencies, Festival Owners",
+              "description": "total annual green economic impact of ZWEP",
+              "value": 247392,
+              "formula": "Average_salary_of_FTE_ZWEP_position*Festival_Jobs_Created_FTE_ZWEP+Jobs_created_for_recycling_projects_in_communities+Festival_Jobs_Created_PT_contract_workers*Average_salary_of_festival_event_contract_workers_ZWEP",
+              "variables": "Average_salary_of_FTE_ZWEP_position,Festival_Jobs_Created_FTE_ZWEP,Jobs_created_for_recycling_projects_in_communities,Festival_Jobs_Created_PT_contract_workers,Average_salary_of_festival_event_contract_workers_ZWEP",
               "changed": false
             },
             {
               "id": "proxy_10",
-              "type": "social_impact",
-              "stakeholders": "Staff Artists",
-              "description": "Increased sense of purpose",
-              "value": 20000,
-              "variables": "fulltime_staff,part_time_staff,health_benefits_purpose",
-              "formula": "(fulltime_staff + part_time_staff ) * health_benefits_purpose",
+              "stakeholders": "Volunteers & Government Officials, Agencies, Festival Owners",
+              "description": "total impact of volunteer hours",
+              "value": 554323.14,
+              "formula": "volunteer_time_per_hour*Total_Volunteer_Hours",
+              "variables": "volunteer_time_per_hour,Total_Volunteer_Hours",
               "changed": false
             },
             {
               "id": "proxy_11",
-              "type": "social_impact",
-              "stakeholders": "Artist Support People",
-              "description": "Increased help with caretaking",
-              "value": 79198.56,
-              "variables": "artists_employed,hours_work_artist,cost_respite_care_ohio,discount_counterfactual",
-              "formula": "(artists_employed * hours_work_artist * cost_respite_care_ohio) - (artists_employed * hours_work_artist * cost_respite_care_ohio * discount_counterfactual)",
-              "changed": false
-            },
-            {
-              "id": "proxy_12",
-              "type": "social_impact",
-              "stakeholders": "Artist Support People",
-              "description": "Increased sense of community and community inclusion",
-              "value": 96000,
-              "variables": "artists_employed,valuation_community_connection",
-              "formula": "2 * artists_employed * valuation_community_connection",
-              "changed": false
-            },
-            {
-              "id": "proxy_13",
-              "type": "social_impact",
-              "stakeholders": "Artist Support People",
-              "description": "Stress reduction",
-              "value": 156000,
-              "variables": "artists_employed,health_caregiving_safe",
-              "formula": "2 * artists_employed * health_caregiving_safe",
-              "changed": false
-            },
-            {
-              "id": "proxy_14",
-              "type": "social_impact",
-              "stakeholders": "Community Members",
-              "description": "Improved community pride and identity",
-              "value": 2413000,
-              "variables": "population_athens,value_placemaking",
-              "formula": "population_athens * value_placemaking",
-              "changed": false
-            },
-            {
-              "id": "proxy_15",
-              "type": "social_impact",
-              "stakeholders": "Community Members",
-              "description": "A place where people network and connect",
-              "value": 224959.04,
-              "variables": "volunteer_hours_PW,volunteer_hour",
-              "formula": "volunteer_hours_PW * volunteer_hour",
-              "changed": false
-            },
-            {
-              "id": "proxy_16",
-              "type": "social_impact",
-              "stakeholders": "Ohio University Students",
-              "description": "Development of cultural competence",
-              "value": 377000,
-              "variables": "OU_class_observers,micro_credential_cultural",
-              "formula": "OU_class_observers * micro_credential_cultural",
-              "changed": false
-            },
-            {
-              "id": "proxy_17",
-              "type": "social_impact",
-              "stakeholders": "Government",
-              "description": "Increased local money flows",
-              "value": 159500,
-              "variables": "revenue_sales,reinvested_community",
-              "formula": "revenue_sales * reinvested_community",
+              "stakeholders": "Local Multiplier",
+              "description": "total impact of Zero Waste activities on local money flows",
+              "value": 268646.981,
+              "formula": "Money_reinvested_back_to_local_economy*Salary_and_Business_revenue",
+              "variables": "Money_reinvested_back_to_local_economy,Salary_and_Business_revenue",
               "changed": false
             }
           ],
-          "formula": "proxy_6 + proxy_7 + proxy_8 + proxy_9 + proxy_10 + proxy_11 + proxy_12 + proxy_13 + proxy_14 + proxy_15 + proxy_16 + proxy_17",
+          "formula": "proxy_6 + proxy_7 + proxy_8 + proxy_9 + proxy_10 + proxy_11",
           "changed": false
         },
         {
           "id": "environmental_impact",
           "title": "What environmental impact is created?",
           "tooltip": "Environmental impact includes changes to biophysical systems and natural capital including energy use, pollution, and preservation of ecosystems.",
-          "totalValue": 10689.95,
+          "totalValue": "42303.78919",
           "rows": [
             {
-              "id": "proxy_18",
-              "stakeholders": "Vendors",
-              "description": "Total embodied carbon cost savings of aluminum reused",
-              "value": 10244.88,
-              "variables": "LBS_aluminum,value_aluminum",
-              "formula": "0.45 * LBS_aluminum * value_aluminum / 1000",
+              "id": "proxy_1",
+              "stakeholders": "Environment",
+              "description": "total cost of carbon avoided",
+              "value": 13150.4778,
+              "formula": "tons_of_waste_food*metric_tons_CO2_equivalent_per_ton_of_food_waste+Pounds_of_mixed_waste_diverted_*metric_tons_CO2_equivalent_per_ton_of_solid_waste*$_per_ton_cost_of_CO2/2000",
+              "variables": "tons_of_waste_food,metric_tons_CO2_equivalent_per_ton_of_food_waste,Pounds_of_mixed_waste_diverted_,metric_tons_CO2_equivalent_per_ton_of_solid_waste,$_per_ton_cost_of_CO2",
               "changed": false
             },
             {
-              "id": "proxy_19",
-              "stakeholders": "Vendors",
-              "description": "Total embodied carbon cost savings of processed wood reused",
-              "value": 14.8716,
-              "variables": "LBS_wood,value_wood",
-              "formula": "0.45 * LBS_wood * value_wood / 1000",
+              "id": "proxy_2",
+              "stakeholders": "Small Businesses",
+              "description": "total landfill cost avoided from ReUse Corridor",
+              "value": 5172.6,
+              "formula": "waste_diverted_from_landfill_by_placing_into_SEO_Reuse_Corridor*Tipping_fee_per_cubic_yard_of_mixed_waste",
+              "variables": "waste_diverted_from_landfill_by_placing_into_SEO_Reuse_Corridor,Tipping_fee_per_cubic_yard_of_mixed_waste",
               "changed": false
             },
             {
-              "id": "proxy_20",
-              "stakeholders": "Vendors",
-              "description": "Total carbon cost avoided of reused materials",
-              "value": 430.199,
-              "variables": "LBS_aluminum,LBS_wood,LBS_fabric,co2_by_waste,social_cost_carbon",
-              "formula": "(LBS_aluminum + LBS_wood + LBS_fabric) * co2_by_waste * social_cost_carbon / 2000",
+              "id": "proxy_3",
+              "stakeholders": "Small Businesses",
+              "description": "total landfill cost avoided from Zero Waste activities",
+              "value": 21220.11,
+              "formula": "waste_diverted_from_landfill_from_Zero_Waste_activities*Tipping_fee_per_cubic_yard_of_mixed_waste",
+              "variables": "waste_diverted_from_landfill_from_Zero_Waste_activities,Tipping_fee_per_cubic_yard_of_mixed_waste",
+              "changed": false
+            },
+            {
+              "id": "proxy_4",
+              "stakeholders": "Environment",
+              "description": "total impact of Reuse Corridor tonnage diverted",
+              "value": 2681.9931,
+              "formula": "Amount_of_pounds_put_into_SEO_Reuse_Corridor*CO2_equivalent_of_solid_waste_diverted_*$_per_ton_cost_of_CO2/2000",
+              "variables": "Amount_of_pounds_put_into_SEO_Reuse_Corridor,CO2_equivalent_of_solid_waste_diverted_,$_per_ton_cost_of_CO2",
+              "changed": false
+            },
+            {
+              "id": "proxy_5",
+              "stakeholders": "Small Businesses",
+              "description": "total impact of milage saved",
+              "value": 78.6083,
+              "formula": "Tons_of_waste_put_into_SEO_Reuse_Corridor_*miles_saved_by_using_ReUse_Corridor*Carbon_emissions_of_freight_truck_per_ton-mile*$_per_ton_cost_of_CO2/1000000",
+              "variables": "Tons_of_waste_put_into_SEO_Reuse_Corridor_,miles_saved_by_using_ReUse_Corridor,Carbon_emissions_of_freight_truck_per_ton-mile,$_per_ton_cost_of_CO2",
               "changed": false
             }
           ],
-          "formula": "proxy_18 + proxy_19 + proxy_20 ",
+          "formula": "proxy_1 + proxy_2 + proxy_3 + proxy_4 + proxy_5",
+          "changed": false
+        },
+        {
+          "id": "social_impact",
+          "title": "What social impact is created?",
+          "tooltip": "Social impact includes changes to individuals, groups of people, and organizations in areas such as health, well-being, safety, relationship, and belonging.",
+          "totalValue": "828443.8",
+          "rows": [
+            {
+              "id": "proxy_12",
+              "stakeholders": "Festival participants",
+              "description": "total added social value, education and behavior change, for event goers",
+              "value": 32734.35,
+              "formula": "Median_ticket_price_of_a_ZWEP_event*%_more_people_are_willing_to_pay_for_a_product_from_a_socially_responsible_company*Number_of_people_attending_zero_waste_festival/game/etc.",
+              "variables": "Median_ticket_price_of_a_ZWEP_event,%_more_people_are_willing_to_pay_for_a_product_from_a_socially_responsible_company,Number_of_people_attending_zero_waste_festival/game/etc.",
+              "changed": false
+            },
+            {
+              "id": "proxy_13",
+              "stakeholders": "Vendors",
+              "description": "total social value, education and culture change, for education events and hard to recycle days",
+              "value": 3259.45,
+              "formula": "Cost_of_one_half-day_conference_attendance*People_at_community_field_trips__community_hard_to_recycle_days",
+              "variables": "Cost_of_one_half-day_conference_attendance,People_at_community_field_trips__community_hard_to_recycle_days",
+              "changed": false
+            },
+            {
+              "id": "proxy_14",
+              "stakeholders": "Schools",
+              "description": "total social value of culture change",
+              "value": 756000,
+              "formula": "Cost_of_one_school_district_paying_for_recycling*Number_of_Schools_Zero_Waste_helps_with_recycling",
+              "variables": "Cost_of_one_school_district_paying_for_recycling,Number_of_Schools_Zero_Waste_helps_with_recycling",
+              "changed": false
+            },
+            {
+              "id": "proxy_15",
+              "stakeholders": "Festival Owners",
+              "description": "total social value for marketing",
+              "value": 36450,
+              "formula": "Bailey's_Marketing_Budget_in_POWER*Prime_biking_use_of_Baileys_Trail_is_approximately_22_weeks*Festival_Owners_Towns_added_per_year",
+              "variables": "Bailey's_Marketing_Budget_in_POWER,Prime_biking_use_of_Baileys_Trail_is_approximately_22_weeks,Festival_Owners_Towns_added_per_year",
+              "changed": false
+            }
+          ],
+          "formula": "proxy_12 + proxy_13 + proxy_14 + proxy_15",
           "changed": false
         }
-      ]
+      ],
+      "list": {}
     },
     {
       "label": "Program Details",
-      "type": "interative"
+      "type": "interative",
+      "tables": {},
+      "list": {}
     },
     {
       "label": "References",
       "type": "references",
+      "tables": {},
       "list": [
         {
-          "title": "Azagba, S., Sharaf, M.F. Psychosocial working conditions and the utilization of health care services. BMC Public Health 11, 642 (2011).",
-          "href": "https://doi.org/10.1186/1471-2458-11-642"
+          "title": "Bureau of Labor Statistics, U.S. Department of Labor. (2020). Occupational Outlook Handbook, Meeting, Convention, and Event Planners, retrieved 18 February 2021",
+          "href": "https://www.bls.gov/ooh/business-and-financial/meeting-convention-and-event-planners.htm#tab-5"
         },
         {
-          "title": "Hendricks, A., Myran, S., Katsioloudis, P. J., Owings, W., & Kaplan, L. (2021). Career and Technical Education Industry Credentials and Its Potential Impact on a State’s Economy. Journal of Applied Business & Economics, 23(8), 1–10.",
-          "href": ""
+          "title": "EPA. (2016, April). Volume to weight conversion factors memorandum.",
+          "href": "https://www.epa.gov/sites/production/files/2016-04/documents/volume_to_weight_conversion_factors_memorandum_04192016_508fnl.pdf"
         },
         {
-          "title": "JAE UK CHUN, JOHN J. SOSIK, & NAM YI YUN. (2012). A longitudinal study of mentor and protégé outcomes in formal mentoring relationships. Journal of Organizational Behavior, 33(8), 1071–1094.",
-          "href": "https://doi-org.proxy.library.ohio.edu/10.1002/job.1781"
+          "title": "Exec. Order No. 13990, Technical Support Document (February, 2021).",
+          "href": "https://www.whitehouse.gov/wp-content/uploads/2021/02/TechnicalSupportDocument_SocialCostofCarbonMethaneNitrousOxide.pdf"
         },
         {
-          "title": "Phillips, P. P., Phillips, J. J., & Ray, R. (2020). Proving the value of soft skills: Measuring impact and calculating ROI. ATD Press.",
-          "href": ""
+          "title": "Godlewski, N. (2020). Small business revenue statistics (2021): Annual sales and earnings. Fundera Inc. New York, NY. Retrieved 17 February 2021.",
+          "href": "https://www.fundera.com/resources/small-business-revenue-statistics"
+        },
+        {
+          "title": "Independent Sector. (2019, April 11). Independent Sector releases new value of volunteer time of $25.43 per hour [Press release].",
+          "href": "https://independentsector.org/news-post/new-value-volunteer-time-2019/"
+        },
+        {
+          "title": "Lin, Y. (2020). 10 Ebay statistics you need to know in 2021. Oberlo.",
+          "href": "https://www.oberlo.com/blog/ebay-statistics"
+        },
+        {
+          "title": "Marten, A.L., & Newbold, S.C. (2012). Estimating the social cost of non-CO2 GHG emissions: Methane and nitrous oxide. Energy Policy, 51, 957-972.",
+          "href": "https://doi.org/10.1016/j.enpol.2012.09.073"
+        },
+        {
+          "title": "Mathers, J. (2015, March 24). Green freight math: How to calculate emissions for a truck move. Enviornmental Defense Fund.",
+          "href": "https://business.edf.org/insights/green-freight-math-how-to-calculate-emissions-for-a-truck-move/"
+        },
+        {
+          "title": "NAAEE 2021: The Power of Connection. (2021.) North American Association for Environmental Education.",
+          "href": "https://conference.naaee.org/"
+        },
+        {
+          "title": "Nucleus Research. (2018, November 12). The ROI of philanthropy: Consumers willing to spend 6% more for products from socially responsible companies.",
+          "href": "https://nucleusresearch.com/news/the-roi-of-philanthropy-consumers-willing-to-spend-6-more-for-products-from-socially-responsible-companies/#:~:text=BOSTON%20%E2%80%94%20New%20findings%20from%20Nucleus,product%20from%20socially%20responsible%20companies.&text=Consumers%20are%2064%25%20more%20likely%20to%20recommend%20socially%20responsible%20companies%20to%20friends"
+        },
+        {
+          "title": "O'Brien, J. (2016). The landfill impacts of food waste diversion programs. MSW Management. 18 August 2016.",
+          "href": "https://www.mswmanagement.com/landfills/article/13025743/the-landfill-impacts-of-food-waste-diversion-programs"
+        },
+        {
+          "title": "Patel, A. & Martin, G. (2011). Going local: Quantifying the economic impacts of buying from locally owned busineeses in Portland, Maine. Maine Center for Economic Policy.",
+          "href": "https://www.mecep.org/wp-content/uploads/2011/12/MECEP_Report_-_Buying_Local-12-5-2011.pdf"
+        },
+        {
+          "title": "SICCODE.com. (2017). NAICS Code 5629-remediation and other waste management services. Description.",
+          "href": "https://siccode.com/naics-code/5629/remediation-waste-management-services"
+        },
+        {
+          "title": "U.S. Census Bureau Newsroom. (2011, June 14). Half of U.S. respondent businesses were home-based, majority self-financed, Census Bureau reports [Press release].",
+          "href": "https://www.census.gov/newsroom/releases/archives/business_ownership/cb11-110.html"
         }
       ]
     }
   ],
   "proxy_inputs": [
     {
-      "id": "anual_operating_cost",
-      "value": 695168,
+      "id": "tons_of_waste_food",
+      "value": 131.6085,
+      "type": "user_input",
+      "description": "Food Waste in Tons",
+      "changed": false
+    },
+    {
+      "id": "metric_tons_CO2_equivalent_per_ton_of_food_waste",
+      "value": 1.54,
+      "type": "user_input",
+      "description": "metric tons CO2 equivalent per ton of food waste",
+      "changed": false
+    },
+    {
+      "id": "metric_tons_CO2_equivalent_per_ton_of_solid_waste",
+      "value": 1.22,
+      "type": "user_input",
+      "description": "metric tons CO2 equivalent per ton of solid waste",
+      "changed": false
+    },
+    {
+      "id": "$_per_ton_cost_of_CO2",
+      "value": 51,
       "type": "cost",
       "unit": "currency",
-      "description": "Total Annual Operating Costs",
+      "description": "Cost per ton of CO2",
       "changed": false
     },
     {
-      "id": "value_materials",
-      "value": 10000,
+      "id": "Tipping_fee_per_cubic_yard_of_mixed_waste",
+      "value": 15,
       "type": "cost",
       "unit": "currency",
-      "description": "Total value of donations of materials",
+      "description": "Tipping fee per cubic yard of mixed waste for Athens/Hocking Landfill Reclamation Center",
       "changed": false
     },
     {
-      "id": "time_find_transportation",
-      "value": 2424,
+      "id": "miles_saved_by_using_ReUse_Corridor",
+      "value": 221,
+      "type": "user_input",
+      "description": "Miles saved by using ReUse Corridor",
+      "changed": false
+    },
+    {
+      "id": "Carbon_emissions_of_freight_truck_per_ton-mile",
+      "value": 161.8,
+      "type": "user_input",
+      "description": "Carbon emissions of freight truck per ton-mile",
+      "changed": false
+    },
+    {
+      "id": "number_of_businesses",
+      "value": 22,
+      "type": "user_input",
+      "description": "Number of businesses",
+      "changed": false
+    },
+    {
+      "id": "Average_revenue_of_small_businesses_with_one_to_four_employees",
+      "value": 387000,
       "type": "cost",
       "unit": "currency",
-      "description": "Arist support person time spent finding transportation",
+      "description": "Average revenue of small businesses with one to four employees in 2007",
       "changed": false
     },
     {
-      "id": "artists_employed",
-      "value": 30,
-      "type": "user_input",
-      "unit": "",
-      "description": "Number of artists employed",
-      "changed": false
-    },
-    {
-      "id": "hours_work_artist",
-      "value": 189,
-      "type": "user_input",
-      "unit": "",
-      "description": "Average number of hours worked by a core artist",
-      "changed": false
-    },
-    {
-      "id": "wage_earned_artist",
-      "value": 10.1,
-      "type": "user_input",
-      "unit": "",
-      "description": "Average hourly wage earned by an artist",
-      "changed": false
-    },
-    {
-      "id": "extra_attendance_artist",
-      "value": 4,
-      "type": "user_input",
-      "unit": "",
-      "description": "Average artist attendance at extra service offering (2-6)",
-      "changed": false
-    },
-    {
-      "id": "fulltime_staff",
-      "value": 6,
-      "type": "user_input",
-      "unit": "",
-      "description": "Number of fulltime staff (includes administrative roles)",
-      "changed": false
-    },
-    {
-      "id": "wage_fulltime",
-      "value": 32409,
-      "type": "user_input",
-      "unit": "currency",
-      "description": "Average wage of full-time staff artists (non administrative roles)",
-      "changed": false
-    },
-    {
-      "id": "part_time_staff",
-      "value": 2,
-      "type": "user_input",
-      "unit": "",
-      "description": "Number of part-time staff",
-      "changed": false
-    },
-    {
-      "id": "wage_part_time",
-      "value": 11172,
-      "type": "user_input",
-      "unit": "currency",
-      "description": "Average wage of part-time staff artists",
-      "changed": false
-    },
-    {
-      "id": "cottage_artists",
-      "value": 3,
-      "type": "user_input",
-      "unit": "",
-      "description": "Number of cottage industry artists",
-      "changed": false
-    },
-    {
-      "id": "wage_cottage",
-      "value": 1671,
-      "type": "user_input",
-      "unit": "currency",
-      "description": "Average wage of cottage artists",
-      "changed": false
-    },
-    {
-      "id": "community_partnerships",
-      "value": 0,
-      "type": "user_input",
-      "unit": "",
-      "description": "Number of major community partnerships",
-      "changed": false
-    },
-    {
-      "id": "volunteers_Honey_Heart",
-      "value": 2000,
-      "type": "user_input",
-      "unit": "",
-      "description": "Number of volunteers for Honey for the Heart",
-      "changed": false
-    },
-    {
-      "id": "volunteer_hours_PW",
-      "value": 7712,
-      "type": "user_input",
-      "unit": "",
-      "description": "Number of volunteer hours for all PW activities",
-      "changed": false
-    },
-    {
-      "id": "OU_interns_annual",
+      "id": "Estimated_proportion_of_each_business_supported_by_corridor",
       "value": 5,
       "type": "user_input",
-      "unit": "",
-      "description": "Number of OU Interns annually",
+      "unit": "percent",
+      "description": "Estimated proportion of each business supported by corridor",
       "changed": false
     },
     {
-      "id": "OU_class_observers",
-      "value": 3770,
-      "type": "user_input",
-      "unit": "",
-      "description": "Number of OU class observers/other OU activities",
-      "changed": false
-    },
-    {
-      "id": "revenue_sales",
-      "value": 275000,
-      "type": "user_input",
+      "id": "home-based_businesses_had_less_than_$25_000_in_revenue_",
+      "value": 25000,
+      "type": "cost",
       "unit": "currency",
-      "description": "Total revenue from sales",
+      "description": "Home-based businesses with less than $25,000 in revenue",
       "changed": false
     },
     {
-      "id": "cost_PW",
-      "value": 91.5,
+      "id": "%_of_products_on_eBay_are_used_or_refurbished",
+      "value": 20,
       "type": "user_input",
+      "unit": "percent",
+      "description": "Percentage of products on eBay that are used or refurbished",
+      "changed": false
+    },
+    {
+      "id": "revenue_generated_by_ZW_from_government_contracts_in_2020",
+      "value": 42771.49,
+      "type": "cost",
       "unit": "currency",
-      "description": "Average cost of PW flower (33-150)",
+      "description": "Total revenue generated by ZW from government contracts in 2020",
       "changed": false
     },
     {
-      "id": "LBS_aluminum",
-      "value": 1600,
-      "type": "user_input",
-      "unit": "",
-      "description": "LBS of aouminum printing plates",
+      "id": "revenue_generated_by_ZWEP_from_Festival_Contracts_in_2019",
+      "value": 173020.96,
+      "type": "cost",
+      "unit": "currency",
+      "description": "Total revenue generated by ZWEP from Festival Contracts in 2019",
       "changed": false
     },
     {
-      "id": "LBS_wood",
-      "value": 900,
-      "type": "user_input",
-      "unit": "",
-      "description": "LBS of wood for flowers",
+      "id": "Average_salary_of_FTE_ZWEP_position",
+      "value": 22000,
+      "type": "cost",
+      "unit": "currency",
+      "description": "Average salary of FTE ZWEP position",
       "changed": false
     },
     {
-      "id": "LBS_fabric",
-      "value": 1200,
+      "id": "Average_salary_of_festival_event_contract_workers_ZWEP",
+      "value": 856,
+      "type": "cost",
+      "unit": "currency",
+      "description": "Average salary of festival/event contract workers ZWEP",
+      "changed": false
+    },
+    {
+      "id": "volunteer_time_per_hour",
+      "value": 25.43,
+      "type": "cost",
+      "unit": "currency",
+      "description": "New value of volunteer time per hour, Independent Sector 2019",
+      "changed": false
+    },
+    {
+      "id": "Salary_and_Business_revenue",
+      "value": 463184,
+      "type": "cost",
+      "unit": "currency",
+      "description": "Salary & Business Revenue",
+      "changed": false
+    },
+    {
+      "id": "Money_reinvested_back_to_local_economy",
+      "value": 50,
       "type": "user_input",
-      "unit": "",
-      "description": "LBS of fabric",
+      "unit": "percent",
+      "description": "Money reinvested back to local economy",
+      "changed": false
+    },
+    {
+      "id": "Median_ticket_price_of_a_ZWEP_event",
+      "value": 82.5,
+      "type": "cost",
+      "unit": "currency",
+      "description": "Median ticket price of a ZWEP event",
+      "changed": false
+    },
+    {
+      "id": "%_more_people_are_willing_to_pay_for_a_product_from_a_socially_responsible_company",
+      "value": 0.06,
+      "description": "Percentage of people who are willing to pay more for a product from a socially responsible company",
+      "changed": false
+    },
+    {
+      "id": "Cost_of_one_half-day_conference_attendance",
+      "value": 8.93,
+      "type": "cost",
+      "unit": "currency",
+      "description": "Cost of one half-day conference attendance through the North American Association for Environmental Education",
+      "changed": false
+    },
+    {
+      "id": "Cost_of_one_school_district_paying_for_recycling",
+      "value": 21000,
+      "type": "cost",
+      "unit": "currency",
+      "description": "Cost of one school district paying for recycling after subsidies discontinued",
+      "changed": false
+    },
+    {
+      "id": "Bailey's_Marketing_Budget_in_POWER",
+      "value": 90000,
+      "type": "cost",
+      "unit": "currency",
+      "description": "Bailey's Marketing Budget in POWER",
+      "changed": false
+    },
+    {
+      "id": "Prime_biking_use_of_Baileys_Trail_is_approximately_22_weeks",
+      "value": 5,
+      "type": "user_input",
+      "description": "Prime biking use of Baileys Trail i",
+      "changed": false
+    },
+    {
+      "id": "Number_of_people_attending_zero_waste_festival/game/etc.",
+      "value": 6613,
+      "type": "user_input",
+      "description": "Number of people attending Zero Waste festival/game/etc.",
+      "changed": false
+    },
+    {
+      "id": "People_at_community_field_trips__community_hard_to_recycle_days",
+      "value": 365,
+      "type": "user_input",
+      "description": "Number of people at community field trips, community hard to recycle days",
+      "changed": false
+    },
+    {
+      "id": "Vendors_at_one_festival/number_of_festivals_per_year",
+      "value": 15,
+      "type": "user_input",
+      "description": "Vendors at one festival/number of festivals per year",
+      "changed": false
+    },
+    {
+      "id": "Number_of_Schools_Zero_Waste_helps_with_recycling",
+      "value": 36,
+      "type": "user_input",
+      "description": "Number of schools Zero Waste helps with recycling",
+      "changed": false
+    },
+    {
+      "id": "Festival_Owners_Towns_added_per_year",
+      "value": 9,
+      "type": "user_input",
+      "description": "Festival owners/towns added per year",
+      "changed": false
+    },
+    {
+      "id": "Total_Volunteer_Hours",
+      "value": 21798,
+      "type": "user_input",
+      "description": "Total Volunteer Hours",
+      "changed": false
+    },
+    {
+      "id": "Festival_Jobs_Created_PT_contract_workers",
+      "value": 32,
+      "type": "user_input",
+      "description": "Festival Jobs Created PT contract workers",
+      "changed": false
+    },
+    {
+      "id": "Festival_Jobs_Created_FTE_ZWEP",
+      "value": 3.25,
+      "type": "user_input",
+      "description": "Festival Jobs Created FTE ZWEP",
+      "changed": false
+    },
+    {
+      "id": "Jobs_created_for_recycling_projects_in_communities",
+      "value": 6.75,
+      "type": "user_input",
+      "description": "Jobs created for recycling projects in communities",
+      "changed": false
+    },
+    {
+      "id": "Pounds_of_food_waste_diverted_",
+      "value": 263217,
+      "type": "user_input",
+      "description": "Pounds of food waste diverted",
+      "changed": false
+    },
+    {
+      "id": "Pounds_of_mixed_waste_diverted_",
+      "value": 90451.5,
+      "type": "user_input",
+      "description": "Pounds of mixed waste diverted",
+      "changed": false
+    },
+    {
+      "id": "Amount_of_pounds_put_into_SEO_Reuse_Corridor",
+      "value": 86210,
+      "type": "user_input",
+      "description": "Amount of pounds put into SEO Reuse Corridor",
+      "changed": false
+    },
+    {
+      "id": "Number_of_Makers_using_recycled_materials_for_products_sold",
+      "value": 9,
+      "description": "Number_of Makers using recycled materials for products sold",
+      "changed": false
+    },
+    {
+      "id": "34.3%_of_nonemployer_firms_have_owners_who_work_at_least_40_hours_a_week_",
+      "value": 66,
+      "description": "Percentage of nonemployer firms that have owners who work at least 40 hours a week",
       "changed": false
     }
   ],
   "proxy_values": [
     {
-      "id": "starting_salary_increase",
-      "value": 6500,
+      "id": "CO2_equivalent_of_food_waste_diverted_",
+      "value": 202.6771,
+      "unit": "tons",
+      "description": "CO2 equivalent of food waste diverted",
+      "changed": false
+    },
+    {
+      "id": "Tons_of_solid_waste",
+      "value": 45.2257,
+      "unit": "tons",
+      "description": "Tons of solid waste",
+      "changed": false
+    },
+    {
+      "id": "CO2_equivalent_of_solid_waste_diverted_",
+      "value": 55.1754,
+      "unit": "tons",
+      "description": "CO2 equivalent of solid waste diverted",
+      "changed": false
+    },
+    {
+      "id": "total_cost_of_carbon_avoided",
+      "value": 13150.4778,
       "unit": "currency",
-      "description": "Increase in average reported FTE and PTE starting salary for graduates with service learning experience",
-      "ref": "(Matthews et al., 2015)",
+      "description": "total cost of carbon avoided",
       "changed": false
     },
     {
-      "id": "consumers_willing_pay",
-      "value": 0.05,
-      "unit": "percentage",
-      "description": "Consumers are willing to pay up to 5% more for environmentally friendly products.",
-      "ref": "(Holbrook, 2019)",
+      "id": "waste_diverted_from_landfill_by_placing_into_SEO_Reuse_Corridor",
+      "value": 344.84,
+      "unit": "cubic_yards",
+      "description": "cubic yards of waste diverted from landfill by placing into SEO Reuse Corridor (EPA, 2016)",
       "changed": false
     },
     {
-      "id": "valuation_sense_identity",
-      "value": 1500,
+      "id": "total_landfill_cost_avoided_from_ReUse_Corridor",
+      "value": 5172.6,
       "unit": "currency",
-      "description": "Wellbeing valuation of sense of identity",
+      "description": "total landfill cost avoided from ReUse Corridor",
       "changed": false
     },
     {
-      "id": "valuation_independence",
-      "value": 2500,
+      "id": "waste_diverted_from_landfill_from_Zero_Waste_activities",
+      "value": 1414.674,
+      "unit": "cubic_yards",
+      "description": "cubic yards of waste diverted from landfill from Zero Waste activities (EPA, 2016)",
+      "changed": false
+    },
+    {
+      "id": "total_landfill_cost_avoided_from_Zero_Waste_activities",
+      "value": 21220.11,
       "unit": "currency",
-      "description": "Wellbeing valuation of independence/agency",
+      "description": "total landfill cost avoided from Zero Waste activities",
       "changed": false
     },
     {
-      "id": "health_benefits_connection",
-      "value": 2000,
+      "id": "Tons_of_waste_put_into_SEO_Reuse_Corridor_",
+      "value": 43.105,
+      "unit": "tons",
+      "description": "Tons of waste put into SEO Reuse Corridor",
+      "changed": false
+    },
+    {
+      "id": "CO2_equivalent_of_solid_waste_diverted_",
+      "value": 52.5881,
+      "unit": "tons",
+      "description": "CO2 equivalent of solid waste diverted",
+      "changed": false
+    },
+    {
+      "id": "total_impact_of_Reuse_Corridor_tonnage_diverted",
+      "value": 2681.9931,
+      "description": "total impact of Reuse Corridor tonnage diverted",
+      "changed": false
+    },
+    {
+      "id": "CO2_saved",
+      "value": 1541339.969,
+      "unit": "grams",
+      "description": "grams of CO2 saved",
+      "changed": false
+    },
+    {
+      "id": "Tons_of_CO2_saved",
+      "value": 1.5413,
+      "unit": "tons",
+      "description": "Tons of CO2",
+      "changed": false
+    },
+    {
+      "id": "total_impact_of_milage_saved",
+      "value": 78.6083,
       "unit": "currency",
-      "description": "Health benefits of having a sense of connection with others",
+      "description": "total impact of milage saved",
       "changed": false
     },
     {
-      "id": "time_learn_from_peers",
-      "value": 0.15,
-      "unit": "percentage",
-      "description": "% time spent informally learning from peers",
-      "changed": false
-    },
-    {
-      "id": "FMV_teacher",
-      "value": 15000,
+      "id": "total_impact_on_businesses_linked_to_the_Reuse_Corridor",
+      "value": 406350,
       "unit": "currency",
-      "description": "FMV of creative teacher",
+      "description": "total impact on businesses linked to the Reuse Corridor",
       "changed": false
     },
     {
-      "id": "health_benefits_purpose",
-      "value": 2500,
+      "id": "total_impact_of_maker_profit",
+      "value": 29565,
       "unit": "currency",
-      "description": "Health benefits of having sense of purpose at work",
+      "description": "total impact of maker profit",
       "changed": false
     },
     {
-      "id": "cost_respite_care_ohio",
-      "value": 15.52,
-      "unit": "",
-      "description": "Average cost of respite care per hour in Ohio (zip recruiter average Ohio)",
-      "changed": false
-    },
-    {
-      "id": "discount_counterfactual",
-      "value": 0.1,
-      "unit": "percentage",
-      "description": "Discount for counterfactual (number of artist support person who said they would take artist to dayhab instead)",
-      "changed": false
-    },
-    {
-      "id": "valuation_community_connection",
-      "value": 1600,
-      "unit": "",
-      "description": "Wellbeing valuation of increased community connection",
-      "changed": false
-    },
-    {
-      "id": "health_caregiving_safe",
-      "value": 2600,
-      "unit": "",
-      "description": "Health impacts of less stress in caregiving /value of knowing loved one is safe",
-      "changed": false
-    },
-    {
-      "id": "population_athens",
-      "value": 24130,
-      "unit": "",
-      "description": "Population of Athens City",
-      "changed": false
-    },
-    {
-      "id": "value_placemaking",
-      "value": 100,
+      "id": "total_impact_of_revenue_generated_by_Zero_Waste_activities_fed_back_to_Rural_Action_nonprofit_activities",
+      "value": 215792.45,
       "unit": "currency",
-      "description": "Value of placemaking (living in a place with art murals)",
+      "description": "total impact of revenue generated by Zero Waste activities fed back to Rural Action nonprofit activities",
       "changed": false
     },
     {
-      "id": "volunteer_hour",
-      "value": 29.17,
+      "id": "Impact_of_FTE_ZWEP_festival_jobs",
+      "value": 71500,
       "unit": "currency",
-      "description": "Value of a volunteer hour",
+      "description": "Impact of FTE ZWEP festival jobs",
       "changed": false
     },
     {
-      "id": "micro_credential_cultural",
-      "value": 100,
+      "id": "Impact_of_Jobs_for_recycling_projects_in_communities",
+      "value": 148500,
       "unit": "currency",
-      "description": "Value of a micro-credential in cultural competence",
+      "description": "Impact of Jobs for recycling projects in communities",
       "changed": false
     },
     {
-      "id": "reinvested_community",
-      "value": 0.58,
+      "id": "Impact_of_PT_contract_festival_jobs",
+      "value": 27392,
       "unit": "currency",
-      "description": "For every $1 spent in a local store, $0.58 will be re-invested in the local community",
+      "description": "Impact of PT contract festival jobs",
       "changed": false
     },
     {
-      "id": "value_aluminum",
-      "value": 14229,
+      "id": "total_annual_green_economic_impact_of_ZWEP",
+      "value": 247392,
       "unit": "currency",
-      "description": "Dollar Value of EC per 1000 kg of aluminum framing ($)",
-      "ref": "(Greenspec, 2023)",
+      "description": "total annual green economic impact of ZWEP",
       "changed": false
     },
     {
-      "id": "value_wood",
-      "value": 36.72,
+      "id": "total_impact_of_volunteer_hours",
+      "value": 554323.14,
       "unit": "currency",
-      "description": "Dollar Value of EC per 1000 kg of processed wood ($)",
-      "ref": "(Greenspec, 2023)",
+      "description": "total impact of volunteer hours",
       "changed": false
     },
     {
-      "id": "co2_by_waste",
-      "value": 1.54,
-      "unit": "",
-      "description": "metric tons CO2 equivalent per ton of food waste",
-      "ref": "(O'Brien, 2016, Table 6)",
-      "changed": false
-    },
-    {
-      "id": "social_cost_carbon",
-      "value": 151,
+      "id": "total_impact_of_Zero_Waste_activities_on_local_money_flows",
+      "value": 268646.981,
       "unit": "currency",
-      "description": "Social Cost of Carbon",
+      "description": "total impact of Zero Waste activities on local money flows",
+      "changed": false
+    },
+    {
+      "id": "total_added_social_value,_education_and_behavior_change,_for_event_goers_",
+      "value": 32734.35,
+      "unit": "currency",
+      "description": "total added social value, education and behavior change, for event goers",
+      "changed": false
+    },
+    {
+      "id": "total_social_value,_education_and_culture_change,_for_education_events_and_hard_to_recycle_days",
+      "value": 3259.45,
+      "unit": "currency",
+      "description": "total social value, education and culture change, for education events and hard to recycle days",
+      "changed": false
+    },
+    {
+      "id": "total_social_value_of_culture_change",
+      "value": 756000,
+      "unit": "currency",
+      "description": "total social value of culture change",
+      "changed": false
+    },
+    {
+      "id": "total_social_value_for_marketing",
+      "value": 36450,
+      "unit": "currency",
+      "description": "total social value for marketing",
       "changed": false
     }
   ]
