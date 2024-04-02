@@ -3,7 +3,7 @@
     "theme": "#92bc4f",
     "top_logo": "images/logo.svg",
     "logo": "images/zero-waste-logo.png",
-    "title": "ZERO WASTE INITIATIVE",
+    "title": "Zero Waste Initiative",
     "invested": 1,
     "return": 6.29,
     "return_description": "of social, environmental, and economic impact",
@@ -81,6 +81,52 @@
           "changed": false
         },
         {
+          "id": "social_impact",
+          "title": "What social impact is created?",
+          "tooltip": "Social impact includes changes to individuals, groups of people, and organizations in areas such as health, well-being, safety, relationship, and belonging.",
+          "totalValue": "828443.8",
+          "rows": [
+            {
+              "id": "proxy_12",
+              "stakeholders": "Festival participants",
+              "description": "total added social value, education and behavior change, for event goers",
+              "value": 32734.35,
+              "formula": "Median_ticket_price_of_a_ZWEP_event*%_more_people_are_willing_to_pay_for_a_product_from_a_socially_responsible_company*Number_of_people_attending_zero_waste_festival/game/etc.",
+              "variables": "Median_ticket_price_of_a_ZWEP_event,%_more_people_are_willing_to_pay_for_a_product_from_a_socially_responsible_company,Number_of_people_attending_zero_waste_festival/game/etc.",
+              "changed": false
+            },
+            {
+              "id": "proxy_13",
+              "stakeholders": "Vendors",
+              "description": "total social value, education and culture change, for education events and hard to recycle days",
+              "value": 3259.45,
+              "formula": "Cost_of_one_half-day_conference_attendance*People_at_community_field_trips__community_hard_to_recycle_days",
+              "variables": "Cost_of_one_half-day_conference_attendance,People_at_community_field_trips__community_hard_to_recycle_days",
+              "changed": false
+            },
+            {
+              "id": "proxy_14",
+              "stakeholders": "Schools",
+              "description": "total social value of culture change",
+              "value": 756000,
+              "formula": "Cost_of_one_school_district_paying_for_recycling*Number_of_Schools_Zero_Waste_helps_with_recycling",
+              "variables": "Cost_of_one_school_district_paying_for_recycling,Number_of_Schools_Zero_Waste_helps_with_recycling",
+              "changed": false
+            },
+            {
+              "id": "proxy_15",
+              "stakeholders": "Festival Owners",
+              "description": "total social value for marketing",
+              "value": 36450,
+              "formula": "Bailey's_Marketing_Budget_in_POWER*Prime_biking_use_of_Baileys_Trail_is_approximately_22_weeks*Festival_Owners_Towns_added_per_year",
+              "variables": "Bailey's_Marketing_Budget_in_POWER,Prime_biking_use_of_Baileys_Trail_is_approximately_22_weeks,Festival_Owners_Towns_added_per_year",
+              "changed": false
+            }
+          ],
+          "formula": "proxy_12 + proxy_13 + proxy_14 + proxy_15",
+          "changed": false
+        },
+        {
           "id": "environmental_impact",
           "title": "What environmental impact is created?",
           "tooltip": "Environmental impact includes changes to biophysical systems and natural capital including energy use, pollution, and preservation of ecosystems.",
@@ -133,52 +179,6 @@
             }
           ],
           "formula": "proxy_1 + proxy_2 + proxy_3 + proxy_4 + proxy_5",
-          "changed": false
-        },
-        {
-          "id": "social_impact",
-          "title": "What social impact is created?",
-          "tooltip": "Social impact includes changes to individuals, groups of people, and organizations in areas such as health, well-being, safety, relationship, and belonging.",
-          "totalValue": "828443.8",
-          "rows": [
-            {
-              "id": "proxy_12",
-              "stakeholders": "Festival participants",
-              "description": "total added social value, education and behavior change, for event goers",
-              "value": 32734.35,
-              "formula": "Median_ticket_price_of_a_ZWEP_event*%_more_people_are_willing_to_pay_for_a_product_from_a_socially_responsible_company*Number_of_people_attending_zero_waste_festival/game/etc.",
-              "variables": "Median_ticket_price_of_a_ZWEP_event,%_more_people_are_willing_to_pay_for_a_product_from_a_socially_responsible_company,Number_of_people_attending_zero_waste_festival/game/etc.",
-              "changed": false
-            },
-            {
-              "id": "proxy_13",
-              "stakeholders": "Vendors",
-              "description": "total social value, education and culture change, for education events and hard to recycle days",
-              "value": 3259.45,
-              "formula": "Cost_of_one_half-day_conference_attendance*People_at_community_field_trips__community_hard_to_recycle_days",
-              "variables": "Cost_of_one_half-day_conference_attendance,People_at_community_field_trips__community_hard_to_recycle_days",
-              "changed": false
-            },
-            {
-              "id": "proxy_14",
-              "stakeholders": "Schools",
-              "description": "total social value of culture change",
-              "value": 756000,
-              "formula": "Cost_of_one_school_district_paying_for_recycling*Number_of_Schools_Zero_Waste_helps_with_recycling",
-              "variables": "Cost_of_one_school_district_paying_for_recycling,Number_of_Schools_Zero_Waste_helps_with_recycling",
-              "changed": false
-            },
-            {
-              "id": "proxy_15",
-              "stakeholders": "Festival Owners",
-              "description": "total social value for marketing",
-              "value": 36450,
-              "formula": "Bailey's_Marketing_Budget_in_POWER*Prime_biking_use_of_Baileys_Trail_is_approximately_22_weeks*Festival_Owners_Towns_added_per_year",
-              "variables": "Bailey's_Marketing_Budget_in_POWER,Prime_biking_use_of_Baileys_Trail_is_approximately_22_weeks,Festival_Owners_Towns_added_per_year",
-              "changed": false
-            }
-          ],
-          "formula": "proxy_12 + proxy_13 + proxy_14 + proxy_15",
           "changed": false
         }
       ],
