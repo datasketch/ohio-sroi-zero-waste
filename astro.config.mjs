@@ -7,8 +7,9 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), sitemap()],
-  site: 'https://lucent-bunny-643535.netlify.app',
+  base: '/zero-waste',
+  site: 'https://ousroi.datasketch.co/zero-waste',
   build: {
-    assetsPrefix: process.env.PREFIX_ASSETS === 'yes' ? 'https://lucent-bunny-643535.netlify.app' : ''
+    assetsPrefix: process.env.PREFIX_ASSETS === 'yes' ? 'https://ousroi.datasketch.co/zero-waste' : ''
   }
 });

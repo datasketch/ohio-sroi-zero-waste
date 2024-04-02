@@ -34,7 +34,7 @@ export default function Home() {
               <div className="mb-16">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
                   <div className="flex-shrink-0">
-                    <img src={data.general.logo} alt={data.general.title} />
+                    <img src={data.general.logo} className="object-contain w-28 h-28" alt={data.general.title} />
                   </div>
                   <div className="text-center text-xl">
                     <h1>For every
@@ -46,7 +46,7 @@ export default function Home() {
               <img src={data.general.banner} alt="" />
               <div className="flex flex-col lg:flex-row gap-5 items-center justify-between mt-16">
                 <h2>{data.general.subtitle}</h2>
-                <img src="/images/logo-5.svg" alt="" />
+                <img src="./images/logo-5.svg" alt="" />
               </div>
             </div>
           </div>
