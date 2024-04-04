@@ -20,7 +20,7 @@
           "id": "economic_impact",
           "title": "What economic impact is created?",
           "tooltip": "Economic impact includes changes to individual or collective financial assets including profit, savings, currency circulation, and built capital.",
-          "totalValue": "1453501.198",
+          "totalValue": 1453501.198,
           "rows": [
             {
               "id": "proxy_6",
@@ -84,7 +84,7 @@
           "id": "social_impact",
           "title": "What social impact is created?",
           "tooltip": "Social impact includes changes to individuals, groups of people, and organizations in areas such as health, well-being, safety, relationship, and belonging.",
-          "totalValue": "828443.8",
+          "totalValue": 828443.8,
           "rows": [
             {
               "id": "proxy_12",
@@ -130,7 +130,7 @@
           "id": "environmental_impact",
           "title": "What environmental impact is created?",
           "tooltip": "Environmental impact includes changes to biophysical systems and natural capital including energy use, pollution, and preservation of ecosystems.",
-          "totalValue": "42303.78919",
+          "totalValue": 42303.78919,
           "rows": [
             {
               "id": "proxy_1",
